@@ -1,0 +1,82 @@
+{
+  "v01-摆脱自我意识三步法": [
+    {"prompt": "用户说: '那些有钱人都是靠运气的,有什么了不起'", "expected_framework": "摆脱自我意识三步法", "expected_approach": "探索→认可→转换"},
+    {"prompt": "用户说: '这个方法我试过了,根本没用'", "expected_framework": "摆脱自我意识三步法", "expected_approach": "识别防御机制并切换到学习模式"},
+    {"prompt": "用户说: '你说的不对,我比他懂多了,只是我没去做而已'", "expected_framework": "摆脱自我意识三步法", "expected_approach": "识别贬低信息源行为,引导自我觉察"}
+  ],
+  "v02-身份认同塑造法": [
+    {"prompt": "用户说: '我就是这样的人,改不了的'", "expected_framework": "身份认同塑造法", "expected_approach": "挑战固定身份认同,引入环境设计路径"},
+    {"prompt": "用户说: '我数学不好,不是学编程的料'", "expected_framework": "身份认同塑造法", "expected_approach": "通过书籍催眠和群体潜意识重塑自我认知边界"},
+    {"prompt": "用户说: '每次说要早起运动,最多坚持三天就放弃了'", "expected_framework": "身份认同塑造法", "expected_approach": "从行为层面转向身份层面解决问题"}
+  ],
+  "v03-Kluge识别与对抗法": [
+    {"prompt": "用户说: '我等准备好了再开始,现在还不是时候'", "expected_framework": "Kluge识别与对抗法", "expected_approach": "识别完美主义拖延的Kluge并逆本能行动"},
+    {"prompt": "用户说: '别人会怎么看我啊,算了吧'", "expected_framework": "Kluge识别与对抗法", "expected_approach": "识别社会评价恐惧Kluge,引导逆本能行动"},
+    {"prompt": "用户说: '万一失败了怎么办,损失太大了'", "expected_framework": "Kluge识别与对抗法", "expected_approach": "识别损失厌恶Kluge,重构风险认知"}
+  ],
+  "v04-22战略执行指南": [
+    {"prompt": "用户说: '我读了很多书,但生活一点变化都没有'", "expected_framework": "22战略执行指南", "expected_approach": "从被动阅读转向每天2小时读写+输出系统"},
+    {"prompt": "用户说: '我想提升自己,但不知道从哪里开始'", "expected_framework": "22战略执行指南", "expected_approach": "建立每天固定时段的脑力训练系统"},
+    {"prompt": "用户说: '我脑子太笨了,学什么都比别人慢'", "expected_framework": "22战略执行指南", "expected_approach": "引入大脑复利概念,建立长期读写习惯"}
+  ],
+  "v05-五子棋理论决策框架": [
+    {"prompt": "用户说: '有两个工作机会,一个工资高但没前途,一个工资低但能学到东西,怎么选?'", "expected_framework": "五子棋理论决策框架", "expected_approach": "评估哪个选择能打开更多未来可能性"},
+    {"prompt": "用户说: '该不该辞职去创业?现在收入稳定但感觉没成长'", "expected_framework": "五子棋理论决策框架", "expected_approach": "用连珠思维评估长期连接价值而非短期收益"},
+    {"prompt": "用户说: '我想学一门新技能,但不确定学什么回报最高'", "expected_framework": "五子棋理论决策框架", "expected_approach": "评估技能组合对未来可能性的开放程度"}
+  ],
+  "v06-付出者理论": [
+    {"prompt": "用户说: '我总是帮别人,但他们从不回报我,我是不是太傻了?'", "expected_framework": "付出者理论", "expected_approach": "区分战略性付出与无底线付出,识别获取者"},
+    {"prompt": "用户说: '在职场中要不要多帮同事?会不会被人利用?'", "expected_framework": "付出者理论", "expected_approach": "长期重复博弈视角下的得一给二策略"},
+    {"prompt": "用户说: '我想建立高质量人脉,但不喜欢应酬喝酒'", "expected_framework": "付出者理论", "expected_approach": "通过价值付出而非社交应酬建立人脉"}
+  ],
+  "v07-概率博弈决策框架": [
+    {"prompt": "用户说: '连续投资亏了三次,我是不是不适合做投资?'", "expected_framework": "概率博弈决策框架", "expected_approach": "剥离情绪,用概率思维看待独立事件"},
+    {"prompt": "用户说: '这个项目肯定会成功,我很有把握'", "expected_framework": "概率博弈决策框架", "expected_approach": "避免过度自信,引入概率评估代替二元判断"},
+    {"prompt": "用户说: '上次赚了一笔,这次加大投入准没错'", "expected_framework": "概率博弈决策框架", "expected_approach": "识别赌徒谬误,回归独立概率评估"}
+  ],
+  "v08-提坦道具组合策略": [
+    {"prompt": "用户说: '我什么都会一点但什么都不精,感觉没竞争力'", "expected_framework": "提坦道具组合策略", "expected_approach": "将B级技能组合思维转化为独特壁垒"},
+    {"prompt": "用户说: '我没有天赋,比不上那些天才'", "expected_framework": "提坦道具组合策略", "expected_approach": "识别3-5个前20%技能,通过组合形成不可替代性"},
+    {"prompt": "用户说: '我在公司做了五年,感觉随时可以被替代'", "expected_framework": "提坦道具组合策略", "expected_approach": "盘点现有技能,找到差异化组合方向"}
+  ],
+  "v09-元认知提升法": [
+    {"prompt": "用户说: '我觉得自己已经很厉害了,不需要再学习了'", "expected_framework": "元认知提升法", "expected_approach": "通过阅读破除无知自信,校准自我认知"},
+    {"prompt": "用户说: '我做什么都不行,可能真的没能力吧'", "expected_framework": "元认知提升法", "expected_approach": "通过实践获取客观反馈,矫正过度自卑"},
+    {"prompt": "用户说: '书读了不少,但跟人一聊发现自己什么都不懂'", "expected_framework": "元认知提升法", "expected_approach": "阅读+实践双循环提升客观自我认知能力"}
+  ],
+  "v10-20分钟启动法": [
+    {"prompt": "用户说: '我想学英语但一直没开始,总觉得需要整块时间'", "expected_framework": "20分钟启动法", "expected_approach": "用20分钟计时器突破拖延惯性"},
+    {"prompt": "用户说: '太忙了,根本没时间做想做的事'", "expected_framework": "20分钟启动法", "expected_approach": "降低启动门槛,只要求开始不要求完成"},
+    {"prompt": "用户说: '有个新想法,但想想又觉得还是算了'", "expected_framework": "20分钟启动法", "expected_approach": "用20分钟行动代替无限思考循环"}
+  ],
+  "v11-赚钱根本原理": [
+    {"prompt": "用户说: '我想赚钱,但不知道做什么生意好'", "expected_framework": "赚钱根本原理", "expected_approach": "从'如何赚钱'转向'能解决谁的什么问题'"},
+    {"prompt": "用户说: '我有一个产品 idea,但不确定能不能赚钱'", "expected_framework": "赚钱根本原理", "expected_approach": "评估产品消除不适感或创造幸福感的程度"},
+    {"prompt": "用户说: '现在电商还能做吗?感觉市场已经饱和了'", "expected_framework": "赚钱根本原理", "expected_approach": "回归价值创造本质,在饱和市场中找到未被满足的需求"}
+  ],
+  "v12-部队指挥者模型": [
+    {"prompt": "用户说: '我每天工作12小时但还是月光族,感觉永远富不起来'", "expected_framework": "部队指挥者模型", "expected_approach": "定位当前士兵阶段,制定向将军升级路径"},
+    {"prompt": "用户说: '我有一份稳定工作,但收入有天花板,怎么突破?'", "expected_framework": "部队指挥者模型", "expected_approach": "从用时间换钱转向建立被动收入系统"},
+    {"prompt": "用户说: '自由职业收入不稳定,怎么才能建立稳定的收入体系?'", "expected_framework": "部队指挥者模型", "expected_approach": "从将军阶段向部队指挥者阶段升级"}
+  ],
+  "v13-20本法则": [
+    {"prompt": "用户说: '我想转行做产品经理,但完全零基础,不知从何下手'", "expected_framework": "20本法则", "expected_approach": "通过集中阅读20本产品经理领域书籍建立认知框架"},
+    {"prompt": "用户说: '我在这个行业做了三年了,但感觉还是在凭直觉做事'", "expected_framework": "20本法则", "expected_approach": "通过系统阅读弥补实践经验背后的理论基础"},
+    {"prompt": "用户说: '人工智能太深奥了,普通人根本学不会'", "expected_framework": "20本法则", "expected_approach": "拆解领域为可阅读的20本书,证明入门门槛可控"}
+  ],
+  "v14-周日2小时战略": [
+    {"prompt": "用户说: '我想搞个副业,但工作日加班回来累得动不了'", "expected_framework": "周日2小时战略", "expected_approach": "锁定周日下午低门槛时段固定探索新事物"},
+    {"prompt": "用户说: '周末就想躺着,什么都不想做,但又觉得浪费了时间'", "expected_framework": "周日2小时战略", "expected_approach": "将心理门槛最低的时段用于有压力的新挑战"},
+    {"prompt": "用户说: '我想学一门新技能但是没时间'", "expected_framework": "周日2小时战略", "expected_approach": "每周固定2小时替代'等有时间再说'的无限拖延"}
+  ],
+  "v15-无资本创业框架": [
+    {"prompt": "用户说: '我没钱没经验,能创业吗?'", "expected_framework": "无资本创业框架", "expected_approach": "新手教菜鸟模型——在服务中边做边学"},
+    {"prompt": "用户说: '我看到一个商机,但觉得我自己不够格去做'", "expected_framework": "无资本创业框架", "expected_approach": "找到一个只比目标客户强一点的领域即可开始"},
+    {"prompt": "用户说: '现在创业都得烧钱,普通人根本没机会'", "expected_framework": "无资本创业框架", "expected_approach": "利用免费平台建立服务,不需要成为专家再开始"}
+  ],
+  "v16-逆行者转轮": [
+    {"prompt": "用户说: '我创业失败了三次,也许我真的不是这块料'", "expected_framework": "逆行者转轮", "expected_approach": "将失败重新定义为升级信号,返回七步法找短板"},
+    {"prompt": "用户说: '面试又被拒了,感觉人生好失败'", "expected_framework": "逆行者转轮", "expected_approach": "把挫折转化为等级不足的反馈,针对性提升"},
+    {"prompt": "用户说: '为什么有些人越挫越勇,而我一次打击就起不来了?'", "expected_framework": "逆行者转轮", "expected_approach": "从失败观角度重构,将挫折视为升级循环的一环"}
+  ]
+}
