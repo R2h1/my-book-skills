@@ -1,0 +1,607 @@
+[
+  {
+    "skill": "v01-事权划分三原则",
+    "prompts": [
+      {
+        "prompt": "公司要不要在北京设总部还是分散到各个城市？",
+        "expected_skill": "v01",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "自动驾驶事故责任应该由车企还是车主承担？",
+        "expected_skill": "v01",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "帮我写一份公司团建通知",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "为什么我们部门总是和财务部抢预算？",
+        "expected_skill": "v01",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "给我推荐一本中国经济的入门书",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "中央和地方的环保监管权到底该怎么分？",
+        "expected_skill": "v01",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v02-形式权威vs实际权威",
+    "prompts": [
+      {
+        "prompt": "为什么新来的总监指挥不动那些老员工？",
+        "expected_skill": "v02",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "公司的组织架构图上我领导是我，但实际上我直接向VP汇报，这合理吗？",
+        "expected_skill": "v02",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "帮我设计一个绩效考核表",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "中央的政策到了基层就走样，问题出在哪？",
+        "expected_skill": "v02",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "CEO说要全面转型AI，但下面没人动，怎么办？",
+        "expected_skill": "v02",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v03-激励相容设计",
+    "prompts": [
+      {
+        "prompt": "为什么销售团队只愿意卖大单不愿意做小客户？",
+        "expected_skill": "v03",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "我设了KPI但团队反而做出了我不想要的行为",
+        "expected_skill": "v03",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "怎么组织一次高效的头脑风暴？",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "环保局归地方政府管，那地方怎么会认真查自己的企业？",
+        "expected_skill": "v03",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "如何让各部门主动配合数据共享？",
+        "expected_skill": "v03",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v04-分税制改革逻辑",
+    "prompts": [
+      {
+        "prompt": "1994年的分税制改革到底改变了什么？",
+        "expected_skill": "v04",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "为什么地方政府的土地财政是从分税制开始的？",
+        "expected_skill": "v04",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "给我解释一下增值税和营业税的区别",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "分税制如何影响了后来的地方债问题？",
+        "expected_skill": "v04",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "中国的个人所得税是怎么计算的？",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v05-土地财政诊断",
+    "prompts": [
+      {
+        "prompt": "地方政府为什么这么依赖卖地收入？",
+        "expected_skill": "v05",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "某城市土地出让收入占财政收入80%，这正常吗？",
+        "expected_skill": "v05",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "中国哪个城市的房价最贵？",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "工业用地便宜、住宅用地贵的双轨定价是怎么回事？",
+        "expected_skill": "v05",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "土地财政可持续吗？",
+        "expected_skill": "v05",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v06-土地金融与城投",
+    "prompts": [
+      {
+        "prompt": "城投公司到底是怎么运作的？",
+        "expected_skill": "v06",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "地方政府怎么用土地撬动银行贷款的？",
+        "expected_skill": "v06",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "城投债和地方债有什么区别？",
+        "expected_skill": "v06",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "帮我推荐几个低风险的债券基金",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "如果地价下跌，城投公司会怎样？",
+        "expected_skill": "v06",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v07-官员投资周期",
+    "prompts": [
+      {
+        "prompt": "为什么地方领导一上任就喜欢上大项目？",
+        "expected_skill": "v07",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "新官不理旧账这个现象的制度根源是什么？",
+        "expected_skill": "v07",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "某市同时开工五条地铁线，这合理吗？",
+        "expected_skill": "v07",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "地方债违约会引发系统性风险吗？",
+        "expected_skill": "v12",
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "为什么领导换得越勤的城市，基建越多？",
+        "expected_skill": "v07",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v08-置身事内思维",
+    "prompts": [
+      {
+        "prompt": "为什么不能用西方经济学的框架来分析中国经济？",
+        "expected_skill": "v08",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "我要理解中国的高房价，应该从什么视角开始？",
+        "expected_skill": "v08",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "给我总结一下置身事内这本书",
+        "expected_skill": "v08",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "用SWOT分析一下这个方案",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "为什么新公司里'理论上不该这样'但实际就是这样？",
+        "expected_skill": "v08",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v09-官场加市场双重竞争",
+    "prompts": [
+      {
+        "prompt": "为什么各地政府抢着招商引资，甚至给出超优惠条件？",
+        "expected_skill": "v09",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "为什么中国的地方政府这么'拼经济'？",
+        "expected_skill": "v09",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "企业在选址时应该考虑哪些地方政府的因素？",
+        "expected_skill": "v09",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "为什么有些地方招商条件好但企业还是不去？",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "地方保护主义对经济有什么危害？",
+        "expected_skill": "v09",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v10-产业政策评估",
+    "prompts": [
+      {
+        "prompt": "政府应该补贴新能源车产业吗？",
+        "expected_skill": "v10",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "为什么光伏产业政策导致了产能过剩？",
+        "expected_skill": "v10",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "产业政策到底该不该有退出机制？",
+        "expected_skill": "v10",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "京东方是怎么成功的？",
+        "expected_skill": "v10",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "帮我分析一下特斯拉的投资价值",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v11-产能过剩与潮涌",
+    "prompts": [
+      {
+        "prompt": "为什么中国总是一窝蜂地上同一个产业？",
+        "expected_skill": "v11",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "新能源车会不会也出现光伏那样的产能过剩？",
+        "expected_skill": "v11",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "什么是'潮涌现象'？",
+        "expected_skill": "v11",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "给我推荐几只锂电池股票",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "各地都把芯片作为重点产业，会不会又过剩？",
+        "expected_skill": "v11",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v12-债务通缩预警",
+    "prompts": [
+      {
+        "prompt": "中国的地方债到底有多大风险？",
+        "expected_skill": "v12",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "债务通缩是什么意思？",
+        "expected_skill": "v12",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "地价下跌会引发金融危机吗？",
+        "expected_skill": "v12",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "帮我设计一个家庭理财计划",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "日本的债务问题对中国有什么警示？",
+        "expected_skill": "v12",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v13-发展目标vs过程",
+    "prompts": [
+      {
+        "prompt": "为什么不能拿美国和中国的现状直接比较？",
+        "expected_skill": "v13",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "目标很清晰，但就是做不到，问题出在哪？",
+        "expected_skill": "v13",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "我们应该学习北欧模式吗？",
+        "expected_skill": "v13",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "帮我制定一个三个月减重计划",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "为什么很多改革理想很好但推不动？",
+        "expected_skill": "v13",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v14-渐进改革节奏",
+    "prompts": [
+      {
+        "prompt": "为什么中国的改革总是'摸着石头过河'？",
+        "expected_skill": "v14",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "双轨制改革为什么是一种有效策略？",
+        "expected_skill": "v14",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "想要推动公司数字化转型，应该一步到位还是逐步推进？",
+        "expected_skill": "v14",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "改革速度重要还是方向重要？",
+        "expected_skill": "v14",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "给我写一个APP需求文档",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v15-隧道效应",
+    "prompts": [
+      {
+        "prompt": "为什么经济增长时大家能忍受贫富差距，一放缓就不行了？",
+        "expected_skill": "v15",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "什么是隧道效应？",
+        "expected_skill": "v15",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "为什么现在年轻人'躺平'的讨论这么多？",
+        "expected_skill": "v15",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "中国基尼系数现在是多少？",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "社会不满情绪上升是不是因为贫富差距太大？",
+        "expected_skill": "v15",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v16-失衡传导机制",
+    "prompts": [
+      {
+        "prompt": "为什么中国的贸易顺差那么大？",
+        "expected_skill": "v16",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "中美贸易战的根源到底是什么？",
+        "expected_skill": "v16",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "双循环政策背后的经济逻辑是什么？",
+        "expected_skill": "v16",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "美国的关税政策对中国经济有什么影响？",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "为什么中国居民储蓄率这么高？",
+        "expected_skill": "v16",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v17-信息获取与隐瞒",
+    "prompts": [
+      {
+        "prompt": "为什么下级总是报喜不报忧？",
+        "expected_skill": "v17",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "GDP数据到底有多大的水分？",
+        "expected_skill": "v17",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "怎样设计一套有效的审计制度？",
+        "expected_skill": "v17",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "帮我写一手七言绝句",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "为什么领导下来调研看到的总是好的一面？",
+        "expected_skill": "v17",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v18-比较优势创造",
+    "prompts": [
+      {
+        "prompt": "比较优势到底是不是天定的？",
+        "expected_skill": "v18",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "韩国是怎么从一穷二白发展出电子产业的？",
+        "expected_skill": "v18",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "政府该不该扶持芯片产业？",
+        "expected_skill": "v18",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "李嘉图的比较优势理论是什么？",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "为什么国家要保护幼稚产业？",
+        "expected_skill": "v18",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v19-后发优势到劣势",
+    "prompts": [
+      {
+        "prompt": "为什么成功的公司往往难以转型？",
+        "expected_skill": "v19",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "什么是'后发劣势'？",
+        "expected_skill": "v19",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "中等收入陷阱的根本原因是什么？",
+        "expected_skill": "v19",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "给出一份中国经济增长的历史数据",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "过去成功的经验什么时候会变成包袱？",
+        "expected_skill": "v19",
+        "category": "should_invoke"
+      }
+    ]
+  },
+  {
+    "skill": "v20-银根连着地根",
+    "prompts": [
+      {
+        "prompt": "为什么土地在中国金融体系中这么重要？",
+        "expected_skill": "v20",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "房地产下行会如何影响银行的资产质量？",
+        "expected_skill": "v20",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "土地抵押和信用扩张是什么关系？",
+        "expected_skill": "v20",
+        "category": "should_invoke"
+      },
+      {
+        "prompt": "帮我推荐几个优质的房地产信托基金",
+        "expected_skill": null,
+        "category": "should_not_invoke"
+      },
+      {
+        "prompt": "地价跌了银行会收缩信贷吗？",
+        "expected_skill": "v20",
+        "category": "should_invoke"
+      }
+    ]
+  }
+]
