@@ -1,0 +1,1224 @@
+{
+  "meta": {
+    "book": "百万富翁快车道",
+    "author": "MJ·德马科",
+    "skills_count": 25,
+    "generated": "2026-06-07"
+  },
+  "skills": [
+    {
+      "name": "v01-三条路线图诊断",
+      "description": "用户想诊断自己目前在什么财富路线上时；或对'为什么我这么努力还是没钱'感到困惑时；或想从慢车道切换到快车道但不知如何开始时。",
+      "tests": [
+        {
+          "id": "v01-t1",
+          "prompt": "我每个月工资2万，但房贷车贷加起来要还1.5万，剩下的钱全花光了，我是不是哪里出了问题？",
+          "expected_activation": true,
+          "reason": "用户描述的收入与债务消费模式，正是路线图诊断的典型场景——需要判断其处于人行道还是慢车道。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v01-t2",
+          "prompt": "我今年35岁，一直按着'存钱+定投指数基金'的策略走，但算了一下发现按这个速度60岁才能有500万，感觉哪里不对。",
+          "expected_activation": true,
+          "reason": "用户对慢车道策略产生怀疑，想诊断当前路线的合理性，是路线图诊断的核心触发场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v01-t3",
+          "prompt": "我想从打工转创业，但不知道自己该从哪里开始，能帮我分析一下我现在的情况适合走什么路线吗？",
+          "expected_activation": true,
+          "reason": "用户明确想从慢车道切换到快车道但不知如何开始，直接对应触发场景。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v01-t4",
+          "prompt": "帮我推荐几个年化收益率8%以上的基金定投组合。",
+          "expected_activation": false,
+          "reason": "这是具体的投资产品推荐请求，用户在执行慢车道策略而非诊断路线。诱饵题：表面涉及财富话题，但用户已经在慢车道思维中寻求优化，不是想诊断路线。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v01-t5",
+          "prompt": "我该不该借钱买比特币？",
+          "expected_activation": false,
+          "reason": "这是具体的投资决策咨询，用户已经在考虑一个高风险投机行为，不是想诊断自己所在的财富路线。诱饵题：虽然涉及债务和财富，但本质是单一投资建议。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v01-t6",
+          "prompt": "我有一套房子在收租，同时也在打工，还有一个小副业在卖手工产品——我到底算在什么路线上？",
+          "expected_activation": true,
+          "reason": "边界情况：用户处于混合状态，三条路线不是非此即彼。这正是B段提到的'大多数人处于混合状态'，skill应该激活并解释如何识别主导路线。",
+          "difficulty": "hard"
+        },
+        {
+          "id": "v01-t7",
+          "prompt": "我快50岁了，现在从慢车道切换到快车道还来得及吗？",
+          "expected_activation": true,
+          "reason": "边界情况：B段明确指出'对接近退休年龄的人来说可能不是最优选择'。应该激活并给出审慎判断，而非机械推荐切换。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v02-不可控的有限平衡",
+      "description": "用户想分析一个财富策略/生意模式的数学可行性时；或听到理财建议想判断它是否真的能致富时；或发现自己一直在用时间换金钱想找到根本原因时。",
+      "tests": [
+        {
+          "id": "v02-t1",
+          "prompt": "我现在的策略就是努力工作升职加薪，然后存钱定投，这样到退休能有2000万吗？",
+          "expected_activation": true,
+          "reason": "用户给出了一个典型的慢车道策略，想分析其数学可行性，直接对应触发场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v02-t2",
+          "prompt": "有人说复利是世界第八大奇迹，只要坚持定投30年就能财务自由，这个说法在数学上站得住脚吗？",
+          "expected_activation": true,
+          "reason": "用户听到理财建议想判断其真实性，触发场景明确。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v02-t3",
+          "prompt": "我发现不管我怎么努力加班，收入的天花板好像就在那里，永远突破不了——这是什么原因？",
+          "expected_activation": true,
+          "reason": "用户发现自己用时间换金钱但无法突破，想找到根本原因，直接对应触发场景。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v02-t4",
+          "prompt": "现在买什么股票能赚钱？",
+          "expected_activation": false,
+          "reason": "这是具体的股票推荐请求，用户在执行投资而非分析策略的数学可行性。诱饵题：涉及'投资'但本质是寻求操作建议。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v02-t5",
+          "prompt": "我想学会怎么看K线图做短线交易，有没有好的教程？",
+          "expected_activation": false,
+          "reason": "这是学习具体交易技能，不是分析财富策略的数学结构。诱饵题：表面涉及赚钱方法，但属于战术技能而非战略分析。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v02-t6",
+          "prompt": "美股过去十几年大牛市，很多人靠定投也赚了不少钱，不可控的有限平衡是不是只适用于特定时期？",
+          "expected_activation": true,
+          "reason": "边界情况：用户提出B段中提到的反例——市场在某些时期确实创造了大量财富。skill应激活并解释为什么历史平均不等于个人结果，以及幸存者偏差。",
+          "difficulty": "hard"
+        },
+        {
+          "id": "v02-t7",
+          "prompt": "我明白慢车道数学上很难致富，但我的风险承受能力很低，有家庭负担，是不是只能走慢车道？",
+          "expected_activation": true,
+          "reason": "边界情况：B段提到'对风险承受能力极低的人，慢车道可能是最不坏的选择'。skill应激活并给出平衡分析。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v03-可控的无限平衡",
+      "description": "用户在评估一个创业机会时想分析其数学杠杆时；或想理解'为什么创业者赚得比打工人多那么多'时；或在设计业务模型时想确保变量可控且无限时。",
+      "tests": [
+        {
+          "id": "v03-t1",
+          "prompt": "我想做一个SaaS工具，目标客户是中小企业，这个模式在数学上能做大吗？",
+          "expected_activation": true,
+          "reason": "用户在评估创业机会的数学杠杆，直接对应触发场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v03-t2",
+          "prompt": "为什么我老板每天打高尔夫，赚的钱却是我的100倍？他比我聪明那么多吗？",
+          "expected_activation": true,
+          "reason": "用户想理解创业者与打工者的收入差距根源，对应触发场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v03-t3",
+          "prompt": "我现在在做跨境电商，单个产品利润50元，月销3000单。我想分析一下我的财富天花板在哪里，以及怎么突破。",
+          "expected_activation": true,
+          "reason": "用户正在设计业务模型，想分析变量是否可控且无限，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v03-t4",
+          "prompt": "帮我算一下每个月存5000，年化10%，30年后有多少钱。",
+          "expected_activation": false,
+          "reason": "这是慢车道定投计算，用户在做储蓄规划而非分析业务杠杆。诱饵题：表面是数学计算，但本质是复利计算，属于v02的范畴而非v03。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v03-t5",
+          "prompt": "我每天多工作2小时，收入就能多30%，这样努力下去能财务自由吗？",
+          "expected_activation": false,
+          "reason": "用户在用慢车道思维（用时间换钱）寻求肯定。诱饵题：看似讨论增长，但核心变量是时间——这正是v03要批判的有限变量。用户不该在v03中获得支持。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v03-t6",
+          "prompt": "可控的无限平衡说变量是无限的，但实际上我的小生意连本省都覆盖不了，'无限'是不是太理想化了？",
+          "expected_activation": true,
+          "reason": "边界情况：B段明确指出'现实中几乎所有业务都有天花板'和'真实的上限是执行力的上限'。skill应激活并解释理想模型与现实约束的关系。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v04-五条戒律NEEDS检查",
+      "description": "用户有一个生意/创业想法想快速验证可行性时；或在多个创业方向之间做选择时；或在评估现有业务是否需要调整方向时。",
+      "tests": [
+        {
+          "id": "v04-t1",
+          "prompt": "我想做一个本地家政服务平台，帮人找保洁阿姨，这个想法靠谱吗？能用你的NEEDS框架帮我检查一下吗？",
+          "expected_activation": true,
+          "reason": "用户有创业想法想快速验证可行性，直接触发NEEDS检查。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v04-t2",
+          "prompt": "我现在在考虑两个方向：开奶茶店还是做跨境电商培训，你能帮我评估一下哪个更有潜力？",
+          "expected_activation": true,
+          "reason": "用户在多个创业方向之间做选择，需要NEEDS检查。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v04-t3",
+          "prompt": "我做这个生意半年了，增长很慢，我想知道是不是方向有问题，需要调整。",
+          "expected_activation": true,
+          "reason": "用户想评估现有业务是否需要调整方向，直接对应触发场景。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v04-t4",
+          "prompt": "帮我写一份商业计划书，我要去融资。",
+          "expected_activation": false,
+          "reason": "这是文书写作请求，不是生意可行性验证。诱饵题：表面相关（商业计划书），但用户不需要评估框架而是需要文档产出。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v04-t5",
+          "prompt": "我在淘宝开店卖女装，怎么优化详情页提高转化率？",
+          "expected_activation": false,
+          "reason": "这是运营优化问题，不是方向性评估。诱饵题：涉及生意，但用户已经在执行阶段，需要的是具体运营建议而非NEEDS检查。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v04-t6",
+          "prompt": "我的本地餐馆每年能赚30万，但我知道它违反了好几条NEEDS戒律。我是不是应该关掉它去做一个'完美'的快车道生意？",
+          "expected_activation": true,
+          "reason": "边界情况：B段明确指出'不满足NEEDS不代表不能赚钱'。skill应激活并解释：如果目标是养家糊口，小生意也可以；如果目标是快速致富，则需要调整。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v05-生产者vs消费者思维转换",
+      "description": "用户发现自己总是站在消费者角度思考问题时；或想培养'像富人一样思考'的能力时；或发现自己的时间都花在消费而非创造上时。",
+      "tests": [
+        {
+          "id": "v05-t1",
+          "prompt": "我每天都在刷抖音、逛淘宝，感觉时间都浪费了，但不知道该怎么改变这种状态。",
+          "expected_activation": true,
+          "reason": "用户发现自己的时间花在消费上，想转换思维模式，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v05-t2",
+          "prompt": "看到别人买豪车我也想要，但我知道这样不对——我该怎么培养'富人思维'？",
+          "expected_activation": true,
+          "reason": "用户想培养像富人一样思考的能力，直接对应触发场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v05-t3",
+          "prompt": "每次看到什么东西，我第一反应都是'这个多少钱''哪里能买到'，而不是'这个怎么做'，该怎么训练自己转换视角？",
+          "expected_activation": true,
+          "reason": "用户意识到自己总是消费者角度，想转换，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v05-t4",
+          "prompt": "告诉我哪里能买到最便宜的iPhone 16。",
+          "expected_activation": false,
+          "reason": "这是纯粹的消费者行为——用户完全在'买什么、哪里便宜'的消费者思维中。诱饵题：极端反例，用户不仅没有想转换，反而在强化消费者模式。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v05-t5",
+          "prompt": "这个月信用卡又刷爆了，怎么控制消费欲望？",
+          "expected_activation": false,
+          "reason": "这是个人财务管理/消费控制问题，不是思维转换。诱饵题：涉及消费话题，但用户在寻求省钱技巧而非生产者思维训练。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v05-t6",
+          "prompt": "我白天打工，晚上回家真的累得什么都不想做，但我知道应该做点副业——可'生产者思维'是不是要求我24小时都在生产？那人生还有什么意义？",
+          "expected_activation": true,
+          "reason": "边界情况：B段指出'没有人能只生产不消费'，关键在注意力分配比例而非完全排除消费。skill应激活并给出平衡视角。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v06-影响力定律",
+      "description": "用户想评估一个生意/idea的财富潜力时；或想理解为什么某些人赚得多而自己赚得少时；或在纠结'做高端小众还是做大规模'时。",
+      "tests": [
+        {
+          "id": "v06-t1",
+          "prompt": "我这个手工皮具生意，每个包卖3000元，一个月最多做20个——这个模式的天花板在哪里？",
+          "expected_activation": true,
+          "reason": "用户想评估生意的财富潜力，直接触发影响力定律。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v06-t2",
+          "prompt": "为什么那个网红什么都不会，就拍拍视频就年入千万，我这么努力却赚不到钱？",
+          "expected_activation": true,
+          "reason": "用户想理解收入差距的根源，对应触发场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v06-t3",
+          "prompt": "我在纠结是做高端企业咨询（一个客户收10万）还是做大众知识付费（一个用户收199），哪个更赚钱？",
+          "expected_activation": true,
+          "reason": "用户在做'高端小众vs大规模'的选择，直接对应触发场景。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v06-t4",
+          "prompt": "我该怎么做才能涨粉？",
+          "expected_activation": false,
+          "reason": "这是执行层面的涨粉方法问题，不是评估财富潜力。诱饵题：表面涉及影响力，但用户要的是操作指南而非影响力定律的分析框架。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v06-t5",
+          "prompt": "给我推荐几个赚钱的副业。",
+          "expected_activation": false,
+          "reason": "这是副业推荐请求，不是评估某个生意的财富潜力。诱饵题：涉及赚钱话题，但用户需要的是清单而非分析框架。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v06-t6",
+          "prompt": "我的App有500万用户但月收入只有2万，影响力定律是不是失效了？",
+          "expected_activation": true,
+          "reason": "边界情况：B段提到的'规模幻觉'——有规模不等于能变现。skill应激活并分析影响力≠影响力变现，需要商业系统将影响力转化为利润。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v07-需求戒律-解决需求而非满足自我",
+      "description": "用户想创业但不确定做什么时；或有一个创业想法想验证可行性时；或发现自己在追逐金钱而不是解决问题时。",
+      "tests": [
+        {
+          "id": "v07-t1",
+          "prompt": "我想创业，但不知道做什么好，怎么找到真正有需求的方向？",
+          "expected_activation": true,
+          "reason": "用户想创业但不确定做什么，直接触发需求戒律。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v07-t2",
+          "prompt": "我有一个点子：做一个AI宠物翻译器，你觉得这个想法靠谱吗？",
+          "expected_activation": true,
+          "reason": "用户有创业想法想验证可行性，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v07-t3",
+          "prompt": "我喜欢做手工蜡烛，想把它做成生意，但好像市场上已经有很多人在卖了，我该不该做？",
+          "expected_activation": true,
+          "reason": "用户发现自己在'做喜欢的事'和'市场需求'之间纠结，直接触发需求戒律。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v07-t4",
+          "prompt": "现在什么行业最赚钱？我想投钱进去。",
+          "expected_activation": false,
+          "reason": "用户在追逐金钱而不是解决问题，正是需求戒律要批判的行为模式。诱饵题：用户自己就在违反需求戒律，他需要的是被指出问题而不是被支持。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v07-t5",
+          "prompt": "帮我设计一个App的UI界面。",
+          "expected_activation": false,
+          "reason": "这是设计执行请求，不涉及需求验证。诱饵题：可能涉及产品话题，但用户需要的是设计产出而非方向判断。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v07-t6",
+          "prompt": "需求戒律说'做你喜欢的事是陷阱'，但TikTok、Instagram解决的也不是什么'痛点'，而是无聊。无聊算需求吗？",
+          "expected_activation": true,
+          "reason": "边界情况：B段作者盲点中明确指出'需求戒律对创造型生意不够友好——无聊也是一种需求'。skill应激活并讨论需求的广义定义。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v08-进入戒律-高壁垒才是好赛道",
+      "description": "用户在选择创业方向或生意机会时；或发现某个赛道很火爆想知道是否还值得进入时；或评估一个加盟/代理机会时。",
+      "tests": [
+        {
+          "id": "v08-t1",
+          "prompt": "现在AI大模型很火，我也想进入这个赛道，你觉得还有机会吗？",
+          "expected_activation": true,
+          "reason": "用户发现火爆赛道想评估是否值得进入，直接触发进入戒律。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v08-t2",
+          "prompt": "我想加盟一家奶茶店，品牌方说投入20万就能月入5万，这个靠谱吗？",
+          "expected_activation": true,
+          "reason": "用户在评估加盟机会，直接对应触发场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v08-t3",
+          "prompt": "零基础、低成本创业，有什么好推荐？",
+          "expected_activation": true,
+          "reason": "用户提出'零成本创业'，这正是进入戒律要警示的信号——低壁垒等于拥堵赛道。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v08-t4",
+          "prompt": "我今天要买什么菜？",
+          "expected_activation": false,
+          "reason": "这是日常消费决策，与商业评估完全无关。诱饵题：极端不相关，测试是否过度激活。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v08-t5",
+          "prompt": "我想学编程转行做程序员，前景怎么样？",
+          "expected_activation": false,
+          "reason": "这是个人职业选择问题。诱饵题：B段明确说'个人职业选择不需要进入戒律'——职业是卖时间不是建系统。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v08-t6",
+          "prompt": "我知道开网店壁垒很低，但我有独特的供应链资源，这是不是也算一种壁垒？",
+          "expected_activation": true,
+          "reason": "边界情况：低壁垒行业也可以通过创新建立壁垒。B段说'如果你在低壁垒行业，要么通过创新建立壁垒，要么接受微薄利润'。skill应激活并评估供应链是否构成真正的壁垒。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v09-控制戒律-自己驾驶不搭便车",
+      "description": "用户在考虑加入网络营销、连锁加盟、平台开店时；或发现自己的收入依赖于单一平台/渠道时；或想评估自己的生意是否'真的是自己的'时。",
+      "tests": [
+        {
+          "id": "v09-t1",
+          "prompt": "我想在抖音上开店卖货，你觉得怎么样？",
+          "expected_activation": true,
+          "reason": "用户在考虑平台开店，直接触发控制戒律评估。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v09-t2",
+          "prompt": "有个朋友拉我做一个网络营销项目，说是'管道收入、躺赚'，你觉得靠谱吗？",
+          "expected_activation": true,
+          "reason": "用户考虑加入网络营销，触发控制戒律——识别搭便车风险。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v09-t3",
+          "prompt": "我的收入90%来自淘宝店，最近平台改了规则流量暴跌，我该怎么办？",
+          "expected_activation": true,
+          "reason": "用户发现收入依赖单一平台且失控，想评估控制权问题。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v09-t4",
+          "prompt": "我月薪8000，想做个兼职增加收入，有什么推荐？",
+          "expected_activation": false,
+          "reason": "这是副业推荐请求，用户作为普通员工寻求额外收入，不是评估生意控制权。诱饵题：B段明确说'作为普通员工时就是在搭便车——但这是正常的交易关系，不是生意'。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v09-t5",
+          "prompt": "我应该买哪只基金？",
+          "expected_activation": false,
+          "reason": "这是投资产品推荐，B段明确说'纯粹的被动投资不适用——作为小股东没有控制权是正常的'。诱饵题：涉及金钱但本质是被动投资。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v09-t6",
+          "prompt": "我在淘宝上积累了50万粉丝，现在想把这些粉丝引流到自己的独立站——但淘宝不允许，我该不该冒这个风险？",
+          "expected_activation": true,
+          "reason": "边界情况：B段提到'先在平台上积累粉丝，再将粉丝引流到自有平台是一个过渡策略'。skill应激活并评估这个过渡方案的风险与收益。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v10-规模戒律-规模决定财富天花板",
+      "description": "用户在评估一个生意模式的增长上限时；或想突破当前收入瓶颈时；或纠结'本地化vs规模化'时。",
+      "tests": [
+        {
+          "id": "v10-t1",
+          "prompt": "我开了一家本地咖啡馆，月利润2万，这个生意的天花板在哪里？怎么突破？",
+          "expected_activation": true,
+          "reason": "用户评估生意增长上限，直接触发规模戒律。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v10-t2",
+          "prompt": "我的咨询业务做到月入5万后就上不去了，感觉有一个无形的天花板，怎么突破？",
+          "expected_activation": true,
+          "reason": "用户遇到收入瓶颈，想突破，直接对应触发场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v10-t3",
+          "prompt": "我在纠结是在本地开第二家分店，还是做一个线上课程卖到全国，哪个更有前途？",
+          "expected_activation": true,
+          "reason": "用户纠结本地化vs规模化，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v10-t4",
+          "prompt": "帮我算一下我这家店的盈亏平衡点。",
+          "expected_activation": false,
+          "reason": "这是财务计算请求，不是评估规模天花板。诱饵题：涉及生意分析但本质是会计计算。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v10-t5",
+          "prompt": "我想成为一名自由职业摄影师，该怎么起步？",
+          "expected_activation": false,
+          "reason": "这是个人职业发展问题。诱饵题：B段明确说'个人自由职业者的生意本质上是时间换钱，规模戒律天生被违反——这不一定是坏事'。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v10-t6",
+          "prompt": "我知道规模很重要，但很多'小而美'的生意活得很好，创始人也很自由。规模戒律是不是只适合那些想成为亿万富翁的人？",
+          "expected_activation": true,
+          "reason": "边界情况：B段明确指出'生活方式生意不需要通过规模戒律——不是每个人都想成为亿万富翁'。skill应激活并区分不同目标下的适用性。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v11-时间戒律-让业务与时间脱钩",
+      "description": "用户想评估一个业务模式是否真正实现了被动收入时；或发现自己被生意绑住无法脱身时；或想优化现有业务的自动化程度时。",
+      "tests": [
+        {
+          "id": "v11-t1",
+          "prompt": "我现在经营一家餐厅，每天早上7点到晚上11点都在店里，感觉自己不是在创业而是在给自己找了个更累的工作。",
+          "expected_activation": true,
+          "reason": "用户被生意绑住无法脱身，时间戒律被严重违反，触发诊断。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v11-t2",
+          "prompt": "我做了一个SaaS产品，但客户都要一对一客服支持，我每天花大量时间回复消息，这算不算被动收入？",
+          "expected_activation": true,
+          "reason": "用户想评估业务是否实现了真正的被动收入，触发时间戒律分析。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v11-t3",
+          "prompt": "我的在线课程已经录制好了，现在每个月自动有销售收入——但如果我要加新内容还是需要花时间，这个业务在时间戒律上能打多少分？",
+          "expected_activation": true,
+          "reason": "用户想优化业务自动化程度，评估时间脱钩情况，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v11-t4",
+          "prompt": "怎么提高工作效率？我每天太多会了。",
+          "expected_activation": false,
+          "reason": "这是个人时间管理/效率问题，不是评估业务系统的时间脱钩。诱饵题：涉及'时间'但本质是日常效率提升。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v11-t5",
+          "prompt": "帮我设计一个绩效考核制度。",
+          "expected_activation": false,
+          "reason": "这是人力资源管理请求，与时间戒律无关。诱饵题：可能涉及生意运营但偏离核心。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v11-t6",
+          "prompt": "如果我的业务完全自动化了，那我在里面做什么呢？没有我存在的价值了吗？",
+          "expected_activation": true,
+          "reason": "边界情况：用户担心自动化后自己失去价值。这是时间戒律的深层心理问题——真正的自由不是无事可做，而是可以选择做什么。skill应激活并讨论自由的含义。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v12-时间资产化",
+      "description": "用户在做消费或时间分配决策时想评估真实成本时；或在纠结'省钱还是省时间'时；或想建立时间价值意识时。",
+      "tests": [
+        {
+          "id": "v12-t1",
+          "prompt": "我月薪2万，花3小时在网上比价，就为了省200块钱——这样做划算吗？",
+          "expected_activation": true,
+          "reason": "用户在纠结省钱还是省时间，直接触发时间资产化分析。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v12-t2",
+          "prompt": "我该不该花5000块请一个保洁每周来打扫？自己打扫要花4小时，但觉得花钱请人太奢侈了。",
+          "expected_activation": true,
+          "reason": "用户在做消费决策时想评估真实时间成本，触发时间资产化框架。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v12-t3",
+          "prompt": "我每天通勤3小时，想搬到公司附近但房租贵3000块——值得吗？",
+          "expected_activation": true,
+          "reason": "用户在评估时间vs金钱的置换决策，触发时间资产化计算。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v12-t4",
+          "prompt": "帮我做一个家庭年度预算表。",
+          "expected_activation": false,
+          "reason": "这是预算规划请求，不是时间价值评估。诱饵题：涉及财务话题但本质是表格制作。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v12-t5",
+          "prompt": "怎么存钱才能更快买房子？",
+          "expected_activation": false,
+          "reason": "这是储蓄规划问题，用户关注的是省钱而非时间价值。诱饵题：表面涉及时间（'更快'）但本质是传统理财建议。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v12-t6",
+          "prompt": "我是自由职业者，每小时收费500元。但有时候没项目做，闲下来的时间'价值'怎么算？还值500元/小时吗？",
+          "expected_activation": true,
+          "reason": "边界情况：空闲时间的机会成本计算。时间资产化框架如何处理非连续工作时间？skill应激活并讨论时间估值在供需波动下的适用性。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v13-寄生性债务识别与清除",
+      "description": "用户在考虑借钱消费/贷款时；或想评估当前债务是否健康时；或发现自己每个月工资都用来还债时。",
+      "tests": [
+        {
+          "id": "v13-t1",
+          "prompt": "我月薪1万，想贷款20万买辆车，值得吗？",
+          "expected_activation": true,
+          "reason": "用户考虑借钱消费，触发寄生性债务识别。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v13-t2",
+          "prompt": "我每个月工资发下来就全还了信用卡和花呗，感觉自己一直在为银行打工——我该怎么办？",
+          "expected_activation": true,
+          "reason": "用户发现自己被债务吞噬，想评估和清除寄生性债务。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v13-t3",
+          "prompt": "房贷算不算寄生性债务？我觉得房子会升值，应该算投资吧？",
+          "expected_activation": true,
+          "reason": "用户想评估房贷是否属于寄生性债务，触发框架分析。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v13-t4",
+          "prompt": "哪个银行的贷款利率最低？",
+          "expected_activation": false,
+          "reason": "这是比价行为，用户已经在决定借钱了只是找最低利率。诱饵题：涉及债务但本质是比价，不是评估债务的寄生性。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v13-t5",
+          "prompt": "怎么提高信用卡额度？",
+          "expected_activation": false,
+          "reason": "用户想要更多信用额度，与识别和清除寄生性债务的目标完全相反。诱饵题：表面相关（信用卡）但方向相反。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v13-t6",
+          "prompt": "我有一套房子贷款买的，每月还贷1万，但房子出租能收8000，自住还要贴2000。可大家都说买房是'良性负债'——到底什么是良性负债，什么是寄生性债务？",
+          "expected_activation": true,
+          "reason": "边界情况：B段提到债务不是非黑即白。能产生现金流的贷款与纯消费贷款需要区分。skill应激活并分析'良性负债'与寄生性债务的区别。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v14-兴趣vs承诺-红线原则",
+      "description": "用户说自己想创业但迟迟不行动时触发；或在判断自己是'真的想做'还是'想想而已'时触发；或在投资了大量学习/准备但没产出时触发。",
+      "tests": [
+        {
+          "id": "v14-t1",
+          "prompt": "我花了两万块买创业课程，读了十几本创业书，但半年过去了还没开始——我是不是在假装创业？",
+          "expected_activation": true,
+          "reason": "用户大量学习但无产出，触发红线原则诊断。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v14-t2",
+          "prompt": "我总说'等我存够钱就辞职创业'——但存了三年了还是不敢行动，我到底是在兴趣区还是承诺区？",
+          "expected_activation": true,
+          "reason": "用户迟迟不行动，想判断自己的真实状态，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v14-t3",
+          "prompt": "我注册了公司、上线了网站，但遇到第一个困难用户投诉我就退缩了，想回去再读读书——这正常吗？",
+          "expected_activation": true,
+          "reason": "用户遇到困难退回准备状态，触发红线原则。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v14-t4",
+          "prompt": "推荐几本好的创业入门书籍。",
+          "expected_activation": false,
+          "reason": "这是读书推荐，用户停留在输入阶段。诱饵题：如果激活了，反而会鼓励用户继续'兴趣区'行为——这恰恰是红线原则要打破的模式。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v14-t5",
+          "prompt": "帮我分析一下我的性格适合做什么工作。",
+          "expected_activation": false,
+          "reason": "这是职业性格分析，与创业行动力无关。诱饵题：涉及自我认知但方向是职业规划而非行动诊断。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v14-t6",
+          "prompt": "我还在探索阶段，不知道自己对什么感兴趣、该往哪个方向走——这时候也需要跨过红线吗？",
+          "expected_activation": true,
+          "reason": "边界情况：B段指出'当你尚未明确方向时，红线原则适用于已经选定方向但不敢行动的人，不适用于还在探索阶段'。skill应激活并指出现在需要的是探索而非承诺。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v15-执行vs点子乘法效应",
+      "description": "用户在纠结'我的点子不够好'所以不行动时触发；或看到别人的成功认为是运气（点子好）时触发；或在想'等我想到完美创意再行动'时触发。",
+      "tests": [
+        {
+          "id": "v15-t1",
+          "prompt": "我想做一个社交App，但觉得这个点子已经有人做过了，没什么创新——是不是就不值得做了？",
+          "expected_activation": true,
+          "reason": "用户因为点子不够原创而不行动，直接触发执行vs点子分析。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v15-t2",
+          "prompt": "那个谁谁谁成功就是运气好，踩中了风口——我要是有那个机会我也行。",
+          "expected_activation": true,
+          "reason": "用户把别人的成功归因于运气/点子好，触发乘法效应框架。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v15-t3",
+          "prompt": "我在三个创业方向之间反复横跳，每个都觉得不够完美——怎么才能停止这种状态？",
+          "expected_activation": true,
+          "reason": "用户等待完美创意而迟迟不行动，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v15-t4",
+          "prompt": "现在什么行业是蓝海？给我推荐一个没人做的方向。",
+          "expected_activation": false,
+          "reason": "用户还在寻找'没人做过的完美赛道'，正是该skill要破除的思维。诱饵题：如果激活，反而会强化'找蓝海'的错误方向。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v15-t5",
+          "prompt": "我做事总是三分钟热度，怎么培养坚持的习惯？",
+          "expected_activation": false,
+          "reason": "这是个人习惯养成问题，与点子vs执行无关。诱饵题：表面涉及执行，但本质是自律问题而非乘法效应。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v15-t6",
+          "prompt": "我理解执行比点子重要，但如果一个市场完全没有需求，再好的执行也只是加速失败——在执行之前，至少需要验证到哪个程度才算'够'？",
+          "expected_activation": true,
+          "reason": "边界情况：B段指出'盲目执行——在一个没有需求的市场中持续执行，只是加速失败'。skill应激活并讨论执行前的最低验证标准。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v16-明智风险vs无谓风险",
+      "description": "用户在面临一个重大选择（辞职创业/借贷投资/跳槽）时触发；或在评估一个机会是否值得冒险时触发；或在被周围人批评'冒太大风险'时触发。",
+      "tests": [
+        {
+          "id": "v16-t1",
+          "prompt": "我想辞职全职创业，但周围人都说我疯了——这个风险到底大不大？",
+          "expected_activation": true,
+          "reason": "用户面临辞职创业的重大选择，被批评冒风险，直接触发风险分析。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v16-t2",
+          "prompt": "有一个朋友拉我投资一个项目，说一年回报率300%，我该不该投？",
+          "expected_activation": true,
+          "reason": "用户在评估一个机会是否值得冒险，触发明智vs无谓风险框架。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v16-t3",
+          "prompt": "我现在有一个跳槽机会，工资翻倍但要搬家到另一个城市——值得冒这个险吗？",
+          "expected_activation": true,
+          "reason": "用户在做跳槽决策，想评估风险结构，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v16-t4",
+          "prompt": "我该不该买这份保险？",
+          "expected_activation": false,
+          "reason": "这是保险产品推荐请求，不是风险分析。诱饵题：涉及'风险'话题但本质是消费决策。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v16-t5",
+          "prompt": "我想去澳门赌一把，有什么策略能提高胜率？",
+          "expected_activation": false,
+          "reason": "赌博正是无谓风险的典型例子。诱饵题：如果激活并给出'策略'会误导用户。B段明确赌博是无谓风险，这个prompt不应该触发风险分析框架——应该被拒绝。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v16-t6",
+          "prompt": "我评估下来觉得辞职创业是明智风险——下行有限、上行无限。但我有老婆孩子要养，这个'有限下行'对一个人来说是有限，对一家人来说是不是无限了？",
+          "expected_activation": true,
+          "reason": "边界情况：B段提到'当风险涉及他人时，需要纳入更多人的意见'。skill应激活并讨论家庭维度对风险评估的影响。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v17-实践悖论识别",
+      "description": "用户在听理财/创业建议时想判断可信度时触发；或在看某个大V、畅销书作者的建议时触发；或在考虑花钱参加某个课程/研讨会时触发。",
+      "tests": [
+        {
+          "id": "v17-t1",
+          "prompt": "有个抖音大V天天教人定投指数基金，但他自己住豪宅开豪车——他的钱真的是靠定投赚的吗？",
+          "expected_activation": true,
+          "reason": "用户怀疑理财建议者的可信度，直接触发实践悖论识别。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v17-t2",
+          "prompt": "我想花5万参加一个三天'财务自由'研讨会，主办方说学完就能年入百万——这是真的吗？",
+          "expected_activation": true,
+          "reason": "用户考虑花钱参加高价课程，触发实践悖论分析。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v17-t3",
+          "prompt": "有个理财畅销书作者写了好几本'省钱致富'的书，但有人扒出他靠写书和演讲赚了上千万——他教的和他做的是一回事吗？",
+          "expected_activation": true,
+          "reason": "用户在看畅销书作者建议时想判断可信度，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v17-t4",
+          "prompt": "巴菲特说定投标普500是最好的投资方式，你觉得他说得对吗？",
+          "expected_activation": false,
+          "reason": "巴菲特确实通过投资致富，没有实践悖论。诱饵题：用户只是寻求对某个建议的认同，不是质疑建议者的可信度。而且巴菲特是例外——他确实用他教的方式致富。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v17-t5",
+          "prompt": "我完全相信某某老师的理财课，他说的每一句话我都记下来了——接下来我该怎么做？",
+          "expected_activation": false,
+          "reason": "用户盲目相信某个专家，这正是该skill要防止的。但用户不是在质疑建议者，而是在寻求执行指导。诱饵题：如果激活，反而会强化用户的盲信。应该用红线原则或其他skill处理。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v17-t6",
+          "prompt": "这个实践悖论框架本身有没有悖论？德马科自己也是靠写书赚钱——他教人创业，自己也在'教人创业'这个生意上成功了，这算不算实践悖论？",
+          "expected_activation": true,
+          "reason": "边界情况：B段作者盲点中明确指出'本书本身也存在类似的潜在悖论——他靠互联网公司致富，却写书教人致富'。skill应激活并坦诚讨论这个自我指涉问题。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v18-财富三位一体模型",
+      "description": "用户在纠结'为什么有钱了也不快乐'时调用；或在做一个重大生活/职业决策想评估真实代价时；或发现自己正在用健康/家庭换金钱时。",
+      "tests": [
+        {
+          "id": "v18-t1",
+          "prompt": "我年薪100万但每天工作14小时，没时间陪家人，身体也出问题了——我到底是在变富还是在变穷？",
+          "expected_activation": true,
+          "reason": "用户发现自己在用健康和家庭换金钱，触发三位一体模型。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v18-t2",
+          "prompt": "我朋友买了豪车豪宅，看起来很风光，但我总觉得哪里不对——他真的是'富有'吗？",
+          "expected_activation": true,
+          "reason": "用户对虚假财富产生怀疑，触发三位一体评估。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v18-t3",
+          "prompt": "我在考虑要不要接受一个外派机会，工资翻倍但要跟家人分开两年——值得吗？",
+          "expected_activation": true,
+          "reason": "用户做重大职业决策想评估真实代价，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v18-t4",
+          "prompt": "怎么才能赚到1000万？",
+          "expected_activation": false,
+          "reason": "这是纯粹的赚钱方法问题，用户只关注金钱维度。诱饵题：表面涉及财富，但用户完全在虚假财富的框架内思考。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v18-t5",
+          "prompt": "今天中午吃什么？",
+          "expected_activation": false,
+          "reason": "B段明确说'日常低风险决策不需要启动此模型'。诱饵题：极端不相关场景。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v18-t6",
+          "prompt": "我知道三位一体很重要，但现实是我连房租都快交不起了——对还在生存线上挣扎的人来说，谈'自由、健康、家庭'是不是太奢侈了？",
+          "expected_activation": true,
+          "reason": "边界情况：B段指出'已经陷入生存危机的人，优先解决生存问题再谈三位一体'。skill应激活并给出务实的优先级建议。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v19-抱怨是金矿-需求发现",
+      "description": "用户想创业但不知道做什么时调用；或在日常中想训练自己的商业嗅觉时；或在听到别人抱怨时想'这里面有没有机会'时。",
+      "tests": [
+        {
+          "id": "v19-t1",
+          "prompt": "我想创业但完全不知道做什么，怎么才能发现商业机会？",
+          "expected_activation": true,
+          "reason": "用户想创业但不知做什么，触发抱怨是金矿的需求发现方法。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v19-t2",
+          "prompt": "我每天听到同事抱怨'找停车位太麻烦了'——这里面有商机吗？",
+          "expected_activation": true,
+          "reason": "用户听到抱怨，想分析其中是否有商业机会，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v19-t3",
+          "prompt": "我每次刷社交媒体看到大家在吐槽某些产品/服务时，总觉得这背后有需求，但不知道怎么系统地去挖掘。",
+          "expected_activation": true,
+          "reason": "用户想训练商业嗅觉，触发系统性的需求发现方法。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v19-t4",
+          "prompt": "我有一个客户投诉说产品不好用，该怎么处理？",
+          "expected_activation": false,
+          "reason": "这是客户投诉处理问题，应该触发v21-客户抱怨四分类而非v19。诱饵题：涉及'抱怨'但方向是售后处理而非需求发现。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v19-t5",
+          "prompt": "我讨厌做饭——所以我是不是应该开个外卖店？",
+          "expected_activation": false,
+          "reason": "这是把个人兴趣当需求，B段指出这是典型的失败模式。诱饵题：如果激活，会鼓励用户把个人偏好当成市场需求。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v19-t6",
+          "prompt": "我已经有明确的方向在做执行了，但看到别的'机会'又心动了——我该不该停下来重新探索？",
+          "expected_activation": true,
+          "reason": "边界情况：B段指出'已经有了明确方向且正在执行时，不要再回到机会发现阶段，否则会导致在机会间跳来跳去'。skill应激活并劝阻用户重新回到发现模式。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v20-大家都在做反向指标",
+      "description": "用户看到某个投资/创业机会很火热时调用；或发现身边人都在做同一件事时；或在水暖工/出租车司机都开始讨论某个投资时。",
+      "tests": [
+        {
+          "id": "v20-t1",
+          "prompt": "最近身边所有人都在讨论AI创业，连我妈妈都知道ChatGPT了——现在进入是不是已经太晚了？",
+          "expected_activation": true,
+          "reason": "用户发现大众热议某个赛道，触发反向指标分析。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v20-t2",
+          "prompt": "连我们公司的前台都在买比特币了，这个信号是不是很危险？",
+          "expected_activation": true,
+          "reason": "用户注意到非专业人士都在涌入某个投资，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v20-t3",
+          "prompt": "现在满大街都是奶茶店，但我看到朋友开的店生意很好——我该不该也开一家？",
+          "expected_activation": true,
+          "reason": "用户发现一个热门赛道但犹豫是否进入，触发反向指标框架。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v20-t4",
+          "prompt": "帮我分析一下现在买房是不是好时机。",
+          "expected_activation": false,
+          "reason": "这是房地产市场时机判断，用户要的是宏观预测而非反向指标分析。诱饵题：可能触发但本质是timing问题而非从众行为分析。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v20-t5",
+          "prompt": "大家都在做公益环保，我要不要也参与？",
+          "expected_activation": false,
+          "reason": "B段明确说'公益/非营利领域的从众行为——反向指标框架主要针对财富创造场景'。诱饵题：表面是'大家都在做'但领域不对。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v20-t6",
+          "prompt": "谷歌不是第一个搜索引擎，Facebook不是第一个社交网络，但它们都赢了——'大家都在做'的反向指标是不是太绝对了？",
+          "expected_activation": true,
+          "reason": "边界情况：B段作者盲点指出'低估了在热门赛道中通过差异化竞争获胜的可能性'。skill应激活并解释反向指标是筛查信号而非绝对禁令，以及如何通过差异化在热门赛道中突围。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v21-客户抱怨四分类处理",
+      "description": "用户收到客户投诉不知道如何处理时调用；或想从客户反馈中找到改进方向/新商业机会时；或发现团队被无效投诉消耗大量精力时。",
+      "tests": [
+        {
+          "id": "v21-t1",
+          "prompt": "我的App更新了新版本后，好多用户说'太难用了'——这是真问题还是用户不习惯？该怎么判断？",
+          "expected_activation": true,
+          "reason": "用户收到大量投诉不知如何处理，触发抱怨四分类。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v21-t2",
+          "prompt": "最近收到好几个客户说'要是能自动生成报表就好了'——这个建议值得投入开发吗？",
+          "expected_activation": true,
+          "reason": "用户想从客户反馈中找到改进方向，触发无效投诉分析。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v21-t3",
+          "prompt": "我们客服团队每天被各种投诉淹没，哪些该认真处理哪些该忽略？",
+          "expected_activation": true,
+          "reason": "团队被无效投诉消耗精力，需要分类框架来区分优先级。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v21-t4",
+          "prompt": "怎么提高客户满意度？",
+          "expected_activation": false,
+          "reason": "这是泛化的客户服务问题，不是投诉分类处理。诱饵题：涉及客户话题但范围太广。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v21-t5",
+          "prompt": "我还没有客户，想先做好产品再上线——有什么建议？",
+          "expected_activation": false,
+          "reason": "B段明确说'没有客户的初创期——先获取客户，再谈投诉分类'。诱饵题：用户完全没有客户，框架不适用。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v21-t6",
+          "prompt": "我只有一个B2B大客户，他抱怨了我们的服务流程——按照四分类，大客户的投诉是不是不能简单套用？",
+          "expected_activation": true,
+          "reason": "边界情况：B段指出'B2B大客户投诉——大客户的投诉即使属于变化类也不能简单忽略，需要更高层级处理'。skill应激活并给出B2B大客户投诉的特别处理建议。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v22-5对2时间交易分析",
+      "description": "用户在审视自己的时间分配时调用；或想评估当前工作/生活方式是否值得时；或在考虑换个更忙/更闲的工作时。",
+      "tests": [
+        {
+          "id": "v22-t1",
+          "prompt": "我每天早上8点出门晚上8点到家，周末还经常加班，感觉自己没有生活——这种状态值得吗？",
+          "expected_activation": true,
+          "reason": "用户审视自己的时间分配，想评估当前生活方式是否值得，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v22-t2",
+          "prompt": "我有个机会换工作，工资多50%但每天要多工作3小时，通勤多1小时——划算吗？",
+          "expected_activation": true,
+          "reason": "用户在考虑换工作，想量化评估时间交易，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v22-t3",
+          "prompt": "周日晚上我就开始焦虑第二天要上班，周末总是过得太快了——这是不是说明我的时间交易出了问题？",
+          "expected_activation": true,
+          "reason": "用户感到周末太短、周一焦虑，触发5对2分析。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v22-t4",
+          "prompt": "我每天都很忙，有什么时间管理方法推荐？",
+          "expected_activation": false,
+          "reason": "这是时间管理技巧问题，不是评估时间交易结构。诱饵题：涉及时间话题但本质是效率工具。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v22-t5",
+          "prompt": "5对2回报率这么差，那我是不是应该直接辞职？",
+          "expected_activation": false,
+          "reason": "B段指出'把5对2当作辞职的借口是错误应用——正确的应用是先建立替代收入系统再改变工作结构'。诱饵题：用户想用框架结论合理化冲动决策。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v22-t6",
+          "prompt": "我是自由职业者，没有'5对2'的固定结构——但有时候忙到飞起有时候闲得发慌，这个框架对我适用吗？",
+          "expected_activation": true,
+          "reason": "边界情况：B段指出'没有稳定工作模式的自由职业者需要调整公式为投入产出比'。skill应激活并给出调整后的分析方式。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v23-摇钱树五种苗分类",
+      "description": "用户在选创业方向时想判断哪种模式能产生真正的被动收入时触发；或发现现有业务需要自己不停投入时间时触发；或想优化现有业务的被动性时触发。",
+      "tests": [
+        {
+          "id": "v23-t1",
+          "prompt": "我想找一个不用天天操心的生意，什么样的模式被动性最高？",
+          "expected_activation": true,
+          "reason": "用户想判断哪种模式能产生真正的被动收入，直接触发摇钱树分类。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v23-t2",
+          "prompt": "我经营一家咨询公司，客户都找我本人——我不在的时候业务就停了，怎么提升被动性？",
+          "expected_activation": true,
+          "reason": "用户发现业务需要自己不停投入时间，想优化被动性，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v23-t3",
+          "prompt": "我在考虑做在线课程（内容系统）还是做SaaS工具（软件系统）——哪个被动性更高？",
+          "expected_activation": true,
+          "reason": "用户在创业方向选择中想评估被动收入潜力，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v23-t4",
+          "prompt": "帮我推荐一个赚钱的副业。",
+          "expected_activation": false,
+          "reason": "这是副业推荐，不是评估业务模式的被动性。诱饵题：表面涉及赚钱但本质是清单请求。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v23-t5",
+          "prompt": "什么是被动收入？怎么实现？",
+          "expected_activation": false,
+          "reason": "这是被动收入的概念科普问题，太宽泛。诱饵题：用户需要的是定义而非分类框架。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v23-t6",
+          "prompt": "亚马逊有计算机系统（网站）、分销系统（物流）和人力资源系统（员工），混合时被动性取最低值——那是不是意味着做大了一定会降低被动性？有没有办法在规模扩大的同时保持高被动性？",
+          "expected_activation": true,
+          "reason": "边界情况：B段提到'混合时被动性取最低值'，但用户质疑规模增长与被动性之间的张力。skill应激活并讨论如何在规模扩张中维护被动性。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v24-利润变量控制",
+      "description": "用户在分析现有业务的利润增长点时调用；或想通过优化转化率/流量/客单价来提升收入时；或在设计定价策略时。",
+      "tests": [
+        {
+          "id": "v24-t1",
+          "prompt": "我现在的电商店月销10万，转化率2%，客单价200元，月流量2.5万——怎么把利润翻倍？",
+          "expected_activation": true,
+          "reason": "用户想通过分析利润变量来提升收入，直接触发利润变量控制框架。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v24-t2",
+          "prompt": "我该提高价格还是降低价格来增加利润？",
+          "expected_activation": true,
+          "reason": "用户在设计定价策略，触发利润率变量分析。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v24-t3",
+          "prompt": "我的SaaS产品有1000个付费用户，月费99元，我想把收入做到每月100万——应该从哪个变量入手？",
+          "expected_activation": true,
+          "reason": "用户想通过优化变量来提升收入，直接触发。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v24-t4",
+          "prompt": "怎么降低产品成本？",
+          "expected_activation": false,
+          "reason": "这是供应链管理问题，不是利润变量控制框架。诱饵题：涉及利润话题但太具体。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v24-t5",
+          "prompt": "帮我设计一个广告投放方案。",
+          "expected_activation": false,
+          "reason": "这是营销执行请求，不是利润变量分析。诱饵题：涉及流量话题但用户需要的是方案而非分析框架。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v24-t6",
+          "prompt": "我的产品利润率很高（80%），但销量上不去——这时候是不是应该先放弃利润变量框架，先去验证需求是否存在？",
+          "expected_activation": true,
+          "reason": "边界情况：如果需求不存在，优化利润变量毫无意义。skill应激活并指出利润变量控制的前提是需求已验证，否则应优先使用v07需求戒律。",
+          "difficulty": "hard"
+        }
+      ]
+    },
+    {
+      "name": "v25-三条高速快车道选择",
+      "description": "用户在已经决定走快车道但不确定选哪条路时调用；或在互联网/创新/规模效应三条路之间犹豫时；或想评估自己的资源和能力最适合哪条路时。",
+      "tests": [
+        {
+          "id": "v25-t1",
+          "prompt": "我决定要创业走快车道，但不知道选互联网生意、做新产品还是搞连锁——哪条路最适合我？",
+          "expected_activation": true,
+          "reason": "用户在三条快车道之间犹豫，直接触发选择框架。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v25-t2",
+          "prompt": "我有餐饮行业经验但完全不懂编程，我该怎么选快车道方向？",
+          "expected_activation": true,
+          "reason": "用户想评估自己的资源和能力最适合哪条路，直接触发。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v25-t3",
+          "prompt": "互联网生意和创新产品我都想做，能同时做吗？还是先专注一条？",
+          "expected_activation": true,
+          "reason": "用户在两条路之间犹豫，需要选择框架帮助决策。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v25-t4",
+          "prompt": "我想先打工存点钱再创业，这个想法对吗？",
+          "expected_activation": false,
+          "reason": "用户还在打工vs创业的犹豫阶段，不是已经决定走快车道后在选路。诱饵题：B段明确说'五类苗木框架适用于已经决定走创业路线的人'。",
+          "difficulty": "medium"
+        },
+        {
+          "id": "v25-t5",
+          "prompt": "教我怎么写代码。",
+          "expected_activation": false,
+          "reason": "这是技能学习请求，与快车道选择无关。诱饵题：极端不相关。",
+          "difficulty": "easy"
+        },
+        {
+          "id": "v25-t6",
+          "prompt": "三条高速快车道——互联网、创新、规模效应——都必须满足全部5条NEEDS戒律吗？如果某条路天生就违反某条戒律怎么办？",
+          "expected_activation": true,
+          "reason": "边界情况：用户质疑框架的完整性——某条路可能天生违反某条戒律。skill应激活并讨论三条路分别在哪条戒律上最弱，以及如何弥补。",
+          "difficulty": "hard"
+        }
+      ]
+    }
+  ]
+}
