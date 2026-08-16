@@ -1,0 +1,49 @@
+{
+  "skill": "v01-金钱即人",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我总觉得钱就是个数字，花钱没什么感觉，最近发现这样不太好",
+      "expected_behavior": "调用 v01 金钱即人，帮用户建立'待钱如人'的金钱观",
+      "notes": "正面：金钱观重塑"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "就几块钱而已，要不要那么较真？我从小就不在乎小钱",
+      "expected_behavior": "调用 v01，解释尊重小钱是金钱观基础",
+      "notes": "正面：轻视小钱"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我想改变自己乱花钱的习惯，该怎么开始建立正确的金钱观？",
+      "expected_behavior": "调用 v01，给出待钱如友/尊重小钱的行动步骤",
+      "notes": "正面：建立金钱观"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该买哪只股票长期持有？",
+      "expected_behavior": "不应调用 v01，应调用 v13 投资优秀经营者",
+      "notes": "诱饵（跨 skill）：选股应走投资方法类"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我算一下这笔房贷复利下来要还多少",
+      "expected_behavior": "不应调用 v01，应调用 v04 复利双刃剑",
+      "notes": "诱饵（跨 skill）：复利计算"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我该用什么样的态度对待我的存款？",
+      "expected_behavior": "可触发 v01，但若用户只是问'放哪'则应转 v08/v06",
+      "notes": "边界：态度vs操作"
+    }
+  ]
+}

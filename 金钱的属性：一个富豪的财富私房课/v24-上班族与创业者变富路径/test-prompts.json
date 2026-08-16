@@ -1,0 +1,49 @@
+{
+  "skill": "v24-上班族与创业者变富路径",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我是上班族，怎么才能变富？",
+      "expected_behavior": "调用 v24，给当高管+投资20%工资双路径",
+      "notes": "正面：上班族变富"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我该不该辞职创业？还是继续打工？",
+      "expected_behavior": "调用 v24，权衡三条路径",
+      "notes": "正面：创业vs打工"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "想创业但没经验，去大公司还是小公司？",
+      "expected_behavior": "调用 v24，建议去小公司学全盘业务",
+      "notes": "正面：职业选择"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该买什么股票？",
+      "expected_behavior": "不应调用 v24，应调用 v13 投资方法",
+      "notes": "诱饵（跨 skill）：投资标的"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么跟强者竞争？",
+      "expected_behavior": "不应只调用 v24，应调用 v23 穷二代逆袭（策略）",
+      "notes": "诱饵（跨 skill）：竞争策略"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我40岁了还是普通职员，还来得及吗？",
+      "expected_behavior": "触发 v24，调整预期：即使当不了高管，投资20%工资仍可走",
+      "notes": "边界：中年上班族"
+    }
+  ]
+}

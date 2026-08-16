@@ -1,0 +1,49 @@
+{
+  "skill": "v22-免遭诈骗",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "有个内部渠道说只赚不亏，投10万就翻倍，能信吗？",
+      "expected_behavior": "调用 v22，用双过滤（收益过高/看不懂模式）拒绝",
+      "notes": "正面：高收益骗局"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我怎么判断一个投资提议是不是骗局？",
+      "expected_behavior": "调用 v22，给出防骗双过滤与拖延核实法",
+      "notes": "正面：防骗方法"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我上次被骗了，怎么防止再被骗？",
+      "expected_behavior": "调用 v22，复盘'无知+贪婪'根源",
+      "notes": "正面：被骗复盘"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "这个专家的预测可信吗？",
+      "expected_behavior": "不应只调用 v22，应调用 v17 独立判断",
+      "notes": "诱饵（跨 skill）：专家可信度"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "三个月翻倍的项目要不要投？",
+      "expected_behavior": "不应只调用 v22，应配合 v20 远离暴利（同因）",
+      "notes": "诱饵（跨 skill）：暴利诱惑"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "是不是所有高收益机会都是骗局？",
+      "expected_behavior": "触发 v22，说明不是所有高收益都骗人，但'看得懂+有价值依据+可承受'才可碰",
+      "notes": "边界：真实高收益机会"
+    }
+  ]
+}

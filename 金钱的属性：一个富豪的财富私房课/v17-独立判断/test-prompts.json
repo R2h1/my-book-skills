@@ -1,0 +1,49 @@
+{
+  "skill": "v17-独立判断",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "这个财经大V推荐的股票，能跟吗？",
+      "expected_behavior": "调用 v17，提示'我不知道'+不押注他人预测",
+      "notes": "正面：大V荐股"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "你帮我预测下市场接下来涨还是跌？",
+      "expected_behavior": "调用 v17，说明预测不可信、独立判断",
+      "notes": "正面：要求预测"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "怎么判断一个投资专家到底可不可信？",
+      "expected_behavior": "调用 v17，用'长时间成功（30年）'检验",
+      "notes": "正面：专家可信度"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "新闻说失业率创新高，经济要完了吗？",
+      "expected_behavior": "不应只调用 v17，应调用 v18 新闻vs投资信息分析数据",
+      "notes": "诱饵（跨 skill）：新闻数据"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "有人劝我投一个稳赚的项目，该信吗？",
+      "expected_behavior": "不应只调用 v17，应调用 v22 免遭诈骗",
+      "notes": "诱饵（跨 skill）：防骗"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我不信任何专家，是不是就不用学习了？",
+      "expected_behavior": "触发 v17，说明'不信权威'≠'不学习'，要自己读财报建立判断",
+      "notes": "边界：独立≠闭门"
+    }
+  ]
+}

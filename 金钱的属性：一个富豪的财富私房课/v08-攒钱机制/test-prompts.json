@@ -1,0 +1,49 @@
+{
+  "skill": "v08-攒钱机制",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我工资不低但总月光，怎么才能真的存下钱？",
+      "expected_behavior": "调用 v08，给出剪信用卡+分账的机制性解法",
+      "notes": "正面：月光问题"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "信用卡积分很香，要不要留着用？",
+      "expected_behavior": "调用 v08，说明积分是过度消费诱饵",
+      "notes": "正面：信用卡判断"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我想建立一套攒钱系统，该怎么做？",
+      "expected_behavior": "调用 v08，建立分账存折/信封系统",
+      "notes": "正面：攒钱系统"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "这笔钱该放哪类资产？",
+      "expected_behavior": "不应调用 v08，应调用 v11 资产配置优先",
+      "notes": "诱饵（跨 skill）：资产配置"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我该不该买这个漂亮包包？",
+      "expected_behavior": "不应调用 v08，应调用 v20 消费观漂亮垃圾与不贪",
+      "notes": "诱饵（跨 skill）：消费决策"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我收入只够基本开销，还能攒钱吗？",
+      "expected_behavior": "触发 v08，说明先解决收入（v24）或从最小额储蓄起步",
+      "notes": "边界：低收入者的攒钱"
+    }
+  ]
+}

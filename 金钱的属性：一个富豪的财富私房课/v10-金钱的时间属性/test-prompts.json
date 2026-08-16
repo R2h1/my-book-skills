@@ -1,0 +1,49 @@
+{
+  "skill": "v10-金钱的时间属性",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "这笔钱明年要交学费，能拿去定投基金吗？",
+      "expected_behavior": "调用 v10，识别这是'急钱'，不应投资",
+      "notes": "正面：急钱投资"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我该用多少闲钱去炒股？",
+      "expected_behavior": "调用 v10，给资金贴时间标签、只用5年闲钱",
+      "notes": "正面：闲钱比例"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "借钱炒股到底行不行？",
+      "expected_behavior": "调用 v10，说明杠杆钱（食人族）最致命",
+      "notes": "正面：杠杆投资"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "这笔钱我该怎么配置到大类资产？",
+      "expected_behavior": "不应只调用 v10，应调用 v11 资产配置优先",
+      "notes": "诱饵（跨 skill）：配置"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "长期持有要持有多久？",
+      "expected_behavior": "不应调用 v10，应调用 v15 长期持有",
+      "notes": "诱饵（跨 skill）：持有期限"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我有一笔钱，3年后要用但不想贬值，怎么处理？",
+      "expected_behavior": "触发 v10，匹配中短期（债券/固收）而非权益",
+      "notes": "边界：1-5年中短期资金"
+    }
+  ]
+}

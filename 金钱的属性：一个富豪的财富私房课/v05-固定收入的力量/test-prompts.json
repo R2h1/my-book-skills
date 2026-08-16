@@ -1,0 +1,49 @@
+{
+  "skill": "v05-固定收入的力量",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我是自由职业，收入忽高忽低，感觉很不踏实，怎么办？",
+      "expected_behavior": "调用 v05，建议把不固定收入转成固定收入资产",
+      "notes": "正面：收入不稳定"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我该不该把闲钱买套收租的房子？",
+      "expected_behavior": "调用 v05（配合 v11），评估固定收入资产的价值",
+      "notes": "正面：收租资产"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "两个offer：一个底薪稳定，一个提成高但不稳定，选哪个？",
+      "expected_behavior": "调用 v05，用固定收入质量框架比较",
+      "notes": "正面：工作选择"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该买什么股票？",
+      "expected_behavior": "不应调用 v05，应调用 v13 投资优秀经营者",
+      "notes": "诱饵（跨 skill）：选股"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么才能少花点钱？",
+      "expected_behavior": "不应调用 v05，应调用 v08 攒钱机制",
+      "notes": "诱饵（跨 skill）：省钱"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "主播一个月能赚十几万，比固定工资高多了，是不是更好？",
+      "expected_behavior": "触发 v05，说明收入质量不等于金额，提示转移为固定收入",
+      "notes": "边界：高额不固定收入"
+    }
+  ]
+}

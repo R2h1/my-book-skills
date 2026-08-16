@@ -1,0 +1,49 @@
+{
+  "skill": "v16-慢变富与持续行动",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我30岁了还没财务自由，好焦虑，是不是没希望了？",
+      "expected_behavior": "调用 v16，用'慢变富'化解焦虑、设定50岁基准",
+      "notes": "正面：变富焦虑"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "有没有快速赚钱暴富的方法？",
+      "expected_behavior": "调用 v16，指出急功近利是陷阱",
+      "notes": "正面：想走捷径"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我总是三分钟热度，怎么才能坚持做一件事？",
+      "expected_behavior": "调用 v16，用能久功夫（100天/3个月）方法",
+      "notes": "正面：坚持不了"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该买什么基金定投？",
+      "expected_behavior": "不应调用 v16，应调用 v13/v11 投资方法",
+      "notes": "诱饵（跨 skill）：投资标的"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么拒绝暴利项目的诱惑？",
+      "expected_behavior": "不应只调用 v16，应调用 v20/v22 防骗与消费观",
+      "notes": "诱饵（跨 skill）：具体拒绝方法"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我都快退休了，还来得及慢慢变富吗？",
+      "expected_behavior": "触发 v16，说明慢变富对时间窗口短者需调整（结合现实）",
+      "notes": "边界：临近退休"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "skill": "v11-资产配置优先",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我有一笔闲钱，该怎么分配到股票、债券、存款这些大类？",
+      "expected_behavior": "调用 v11，先做资产配置（教练）再谈标的",
+      "notes": "正面：大类分配"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "为什么我天天研究个股还是不赚钱？",
+      "expected_behavior": "调用 v11，指出精力错配（选标的vs配置）",
+      "notes": "正面：注意力错配"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "资产配置到底该怎么做？有没有框架？",
+      "expected_behavior": "调用 v11，给出认钱-定风险-布阵的执行步骤",
+      "notes": "正面：配置框架"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我买了20只基金，算分散投资吗？",
+      "expected_behavior": "不应只调用 v11，应调用 v12 分散投资的真伪",
+      "notes": "诱饵（跨 skill）：分散判断"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "这只股票的基本面怎么样？",
+      "expected_behavior": "不应调用 v11，应调用 v14 价值投资/读财报",
+      "notes": "诱饵（跨 skill）：个股分析"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我资金量很小（几千块），也需要资产配置吗？",
+      "expected_behavior": "触发 v11，说明小资金先集中（v13），配置简化为'闲钱+应急'两分",
+      "notes": "边界：小资金适用性"
+    }
+  ]
+}

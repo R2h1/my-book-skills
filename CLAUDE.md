@@ -6,10 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This repository distills books into executable Claude Code Skills using the **RIA-TV++ pipeline**. Each book is processed into a set of structured `SKILL.md` files that Claude Code can invoke via `/skill-name`.
 
-Currently contains 3 books:
+Currently contains 4 books:
 - `30岁人生开挂7步法` — 16 skills
 - `小狗钱钱` (Kira & The Secret of a Money) — 20 skills
 - `置身事内：中国政府与经济发展` — 20 skills
+- `金钱的属性：一个富豪的财富私房课` — 26 skills
 
 ## Directory Structure (per book)
 

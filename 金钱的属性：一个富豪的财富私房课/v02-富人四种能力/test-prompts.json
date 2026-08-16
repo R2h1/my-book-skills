@@ -1,0 +1,49 @@
+{
+  "skill": "v02-富人四种能力",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我挺能挣钱的，但就是存不下钱，还老被各种坑，我到底缺什么？",
+      "expected_behavior": "调用 v02，用四能力诊断用户短板",
+      "notes": "正面：高收入但留不住钱"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "想测测自己理财能力怎么样，该怎么自评？",
+      "expected_behavior": "调用 v02，给出四能力自评框架",
+      "notes": "正面：财商自评"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我赚得多但总是月底就没了，也不知道钱花哪去了",
+      "expected_behavior": "调用 v02，诊断缺'攒钱/保值'能力并给行动",
+      "notes": "正面：支出失控"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该买什么基金定投？",
+      "expected_behavior": "不应调用 v02，应调用 v13/v11 投资方法",
+      "notes": "诱饵（跨 skill）：标的推荐"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "要不要买这个储蓄型保险？",
+      "expected_behavior": "不应调用 v02，应调用 v21 保险不是储蓄",
+      "notes": "诱饵（跨 skill）：保险决策"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我年收入不高，也需要四种能力吗？",
+      "expected_behavior": "触发 v02，说明四能力与收入无关、低收入也应补齐攒钱起步",
+      "notes": "边界：低收入者适用性"
+    }
+  ]
+}

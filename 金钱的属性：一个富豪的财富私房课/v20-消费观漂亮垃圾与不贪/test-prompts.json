@@ -1,0 +1,49 @@
+{
+  "skill": "v20-消费观漂亮垃圾与不贪",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "这个包好漂亮，好想买，但好像又用不上几次",
+      "expected_behavior": "调用 v20，用'漂亮的垃圾'过滤器判断",
+      "notes": "正面：冲动消费"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "朋友推荐我投个三个月翻倍的项目，要不要试？",
+      "expected_behavior": "调用 v20，用'远离暴利/腹八分'拒绝",
+      "notes": "正面：暴利诱惑"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我怎么改掉买一堆没用的东西的习惯？",
+      "expected_behavior": "调用 v20，从炫耀消费转向需要消费",
+      "notes": "正面：反消费主义"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我怎么管住自己不乱花钱？",
+      "expected_behavior": "不应只调用 v20，应调用 v08 攒钱机制（机制层面）",
+      "notes": "诱饵（跨 skill）：攒钱机制"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么识别这是不是骗局？",
+      "expected_behavior": "不应只调用 v20，应调用 v22 免遭诈骗",
+      "notes": "诱饵（跨 skill）：防骗"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我有收藏爱好，买藏品算'漂亮的垃圾'吗？",
+      "expected_behavior": "触发 v20，区分'长期价值消费'与'炫耀性消费'",
+      "notes": "边界：爱好的正当性"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "skill": "v06-金钱引力与种子钱",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我一个月只能攒3000，感觉一辈子都攒不到钱，是不是没希望了？",
+      "expected_behavior": "调用 v06，用金钱引力/种子钱重新定义目标",
+      "notes": "正面：攒钱绝望感"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "第一桶金到底要攒多少才够？怎么才能更快突破？",
+      "expected_behavior": "调用 v06，设定种子钱里程碑与攻克策略",
+      "notes": "正面：第一桶金目标"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "为什么有钱人越来越有钱？这个机制是什么？",
+      "expected_behavior": "调用 v06，解释财富倍数增长的引力机制",
+      "notes": "正面：理解财富增长机制"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该怎么记账管住消费？",
+      "expected_behavior": "不应调用 v06，应调用 v08 攒钱机制",
+      "notes": "诱饵（跨 skill）：攒钱操作"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "这笔钱是复利还是单利划算？",
+      "expected_behavior": "不应调用 v06，应调用 v04 复利双刃剑",
+      "notes": "诱饵（跨 skill）：复利计算"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我已经攒了100万，还差得远，要不要继续苦哈哈攒？",
+      "expected_behavior": "触发 v06，判断是否已接近'能自主生息的种子钱'",
+      "notes": "边界：已接近种子钱的过渡"
+    }
+  ]
+}

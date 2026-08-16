@@ -1,0 +1,49 @@
+{
+  "skill": "v18-新闻vs投资信息",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "新闻说经济要崩了，我要不要清仓？",
+      "expected_behavior": "调用 v18，把标题翻译成数据、看比率不看总数",
+      "notes": "正面：恐慌新闻"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "这个失业率数据吓人，是不是真的很严重？",
+      "expected_behavior": "调用 v18，区分总量与比率/边际",
+      "notes": "正面：数据分析"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "同一件事两家媒体说法完全相反，我信谁？",
+      "expected_behavior": "调用 v18，多源核对+分离政治立场",
+      "notes": "正面：矛盾报道"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "现在市场恐惧还是贪婪？该买吗？",
+      "expected_behavior": "不应只调用 v18，应调用 v09 风险与恐惧的逆向",
+      "notes": "诱饵（跨 skill）：情绪判断"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "这个内幕消息能信吗？",
+      "expected_behavior": "不应只调用 v18，应调用 v17/v22 独立判断与防骗",
+      "notes": "诱饵（跨 skill）：内幕消息"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "如果所有数据都显示很糟，我还要'看比率'硬撑着不卖吗？",
+      "expected_behavior": "触发 v18，说明看比率不是否认事实，数据真的很糟也要面对（配合v14价值判断）",
+      "notes": "边界：数据确实很糟"
+    }
+  ]
+}

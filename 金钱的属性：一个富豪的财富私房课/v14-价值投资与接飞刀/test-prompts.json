@@ -1,0 +1,49 @@
+{
+  "skill": "v14-价值投资与接飞刀",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "某优质公司股价因为利空暴跌30%，能抄底吗？",
+      "expected_behavior": "调用 v14，先读财报判断价值是否受损、再谈分批买入",
+      "notes": "正面：抄底判断"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "怎么判断一家公司值多少钱？财报该看什么？",
+      "expected_behavior": "调用 v14，讲读财报（销售额/营业利润/现金流）",
+      "notes": "正面：财报阅读"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "为什么我抄底总是抄在半山腰？",
+      "expected_behavior": "调用 v14，指出缺价值判断与分批纪律",
+      "notes": "正面：抄底失败复盘"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "现在市场恐慌，该不该买？",
+      "expected_behavior": "不应只调用 v14，应配合 v09 判断情绪与逆向",
+      "notes": "诱饵（跨 skill）：逆向时机"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我该买哪家公司长期持有？",
+      "expected_behavior": "不应只调用 v14，应调用 v13 投资优秀经营者",
+      "notes": "诱饵（跨 skill）：选公司"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我不会看财报，能不能抄底？",
+      "expected_behavior": "触发 v14，说明不懂价值者不宜接刀（可先学或只用不割肉策略）",
+      "notes": "边界：无财报能力者的接刀"
+    }
+  ]
+}

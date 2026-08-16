@@ -1,0 +1,49 @@
+{
+  "skill": "v25-退出战略",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我经营的小公司行业在走下坡路，什么时候该卖？",
+      "expected_behavior": "调用 v25，评估退出战略（趁好时出售）",
+      "notes": "正面：企业退出时机"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "创业时就要想退出战略吗？该怎么想？",
+      "expected_behavior": "调用 v25，讲三种退出战略",
+      "notes": "正面：退出战略规划"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "有人要收购我的店，卖不卖？",
+      "expected_behavior": "调用 v25，用'我比品牌珍贵'+退出框架判断",
+      "notes": "正面：收购要约"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我买的股票该不该卖？",
+      "expected_behavior": "不应调用 v25，应调用 v15 长期持有（投资组合）",
+      "notes": "诱饵（跨 skill）：投资卖出"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么把公司做上市？",
+      "expected_behavior": "不应只调用 v25，应配合 v24 创业路径/专业咨询",
+      "notes": "诱饵（跨 skill）：经营操作"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我的店生意很好，是不是就不用想退出了？",
+      "expected_behavior": "触发 v25，说明生意好时正是考虑退出的最佳时机",
+      "notes": "边界：生意好时的退出"
+    }
+  ]
+}

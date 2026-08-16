@@ -1,0 +1,49 @@
+{
+  "skill": "v23-穷二代逆袭",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我出身普通、没什么资源，怎么跟那些有背景的人竞争？",
+      "expected_behavior": "调用 v23，用弱者策略（差异+速度）",
+      "notes": "正面：出身焦虑"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "小团队想跟行业巨头竞争，该怎么打？",
+      "expected_behavior": "调用 v23，找强者弱点+快速行动",
+      "notes": "正面：小vs大竞争"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "没钱没资源怎么找创业机会？",
+      "expected_behavior": "调用 v23，从生活中的不便找商机",
+      "notes": "正面：找机会"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该不该辞职去创业？",
+      "expected_behavior": "不应只调用 v23，应调用 v24 变富路径（权衡）",
+      "notes": "诱饵（跨 skill）：创业决策"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么才能快点变富？",
+      "expected_behavior": "不应调用 v23，应调用 v16 慢变富",
+      "notes": "诱饵（跨 skill）：致富心态"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我不想创业，就想安稳上班，还要学弱者策略吗？",
+      "expected_behavior": "触发 v23，说明弱者策略也适用职场竞争（差异化定位）",
+      "notes": "边界：非创业场景"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "skill": "v07-良债vs劣债",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我该不该贷款买房？负债到底好不好？",
+      "expected_behavior": "调用 v07，用三条件判断房贷是否良债",
+      "notes": "正面：贷款买房判断"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "有个生意机会要借钱投，怎么判断这笔债该不该背？",
+      "expected_behavior": "调用 v07，用良债三条件（不消费/现金流覆盖/ROE>利息）审查",
+      "notes": "正面：借钱投资"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我现在的债务是不是太不健康了？想评估一下",
+      "expected_behavior": "调用 v07，给现有负债打良/劣标签",
+      "notes": "正面：债务健康评估"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "信用卡还不上了，怎么还清？",
+      "expected_behavior": "不应只调用 v07，应调用 v08 攒钱机制优先清理高息债",
+      "notes": "诱饵（跨 skill）：还债操作"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "复利是怎么让我钱变多的？",
+      "expected_behavior": "不应调用 v07，应调用 v04 复利双刃剑",
+      "notes": "诱饵（跨 skill）：复利原理"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "房贷利率3%，我拿去买的楼租金回报4%，算良债吗？",
+      "expected_behavior": "触发 v07，逐条核对三条件（尤其现金流能否覆盖）",
+      "notes": "边界：ROE略高于利息的临界情况"
+    }
+  ]
+}

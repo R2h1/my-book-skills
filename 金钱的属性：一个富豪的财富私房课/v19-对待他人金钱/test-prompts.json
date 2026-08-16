@@ -1,0 +1,49 @@
+{
+  "skill": "v19-对待他人金钱",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "反正花的是公款/报销，用点没啥吧？",
+      "expected_behavior": "调用 v19，说明对待他人金钱的态度就是对待自己金钱的态度",
+      "notes": "正面：公款态度"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "朋友请客，我是不是该点贵点的菜？",
+      "expected_behavior": "调用 v19，指出随意对待朋友的钱暴露真实金钱观",
+      "notes": "正面：聚餐占便宜"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "怎么培养自己尊重金钱、不占小便宜的品格？",
+      "expected_behavior": "调用 v19，给'他人金钱清单'+尊重动作",
+      "notes": "正面：品格培养"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我富了该怎么给爸妈钱、帮兄弟？",
+      "expected_behavior": "不应只调用 v19，应调用 v26 家族首富相处之道",
+      "notes": "诱饵（跨 skill）：家庭财务"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我怎么看待自己的消费习惯？",
+      "expected_behavior": "不应调用 v19，应调用 v20/v01 消费观或金钱观",
+      "notes": "诱饵（跨 skill）：自身消费"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "AA制时该不该替朋友垫钱？",
+      "expected_behavior": "触发 v19，讨论边界（正常AA vs 占便宜），不走向极端",
+      "notes": "边界：AA正常行为的度"
+    }
+  ]
+}

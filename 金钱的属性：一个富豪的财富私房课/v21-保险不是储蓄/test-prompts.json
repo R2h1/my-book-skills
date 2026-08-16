@@ -1,0 +1,49 @@
+{
+  "skill": "v21-保险不是储蓄",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "保险顾问推荐我买能返本的储蓄型寿险当理财，合适吗？",
+      "expected_behavior": "调用 v21，拆解佣金结构、指出'保险不是储蓄'",
+      "notes": "正面：储蓄型保险"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我该买哪些保险？保险能不能当投资？",
+      "expected_behavior": "调用 v21，区分纯保障与理财型",
+      "notes": "正面：保险配置"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "为什么我退保拿不回本金？",
+      "expected_behavior": "调用 v21，解释佣金与退保陷阱",
+      "notes": "正面：退保损失"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该拿多少钱去买理财？",
+      "expected_behavior": "不应只调用 v21，应调用 v11 资产配置",
+      "notes": "诱饵（跨 skill）：资产配置"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "怎么识别这个高收益项目是不是骗局？",
+      "expected_behavior": "不应调用 v21，应调用 v22 免遭诈骗",
+      "notes": "诱饵（跨 skill）：防骗"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我是家里唯一收入来源，是不是该买寿险？",
+      "expected_behavior": "触发 v21，说明纯保障型寿险对赡养者有必要（区分储蓄型）",
+      "notes": "边界：纯保障的必要性"
+    }
+  ]
+}

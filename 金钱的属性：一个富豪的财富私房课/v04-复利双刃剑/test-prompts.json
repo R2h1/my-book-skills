@@ -1,0 +1,49 @@
+{
+  "skill": "v04-复利双刃剑",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "信用卡分期和消费贷，到底划不划算？",
+      "expected_behavior": "调用 v04，用复利双刃剑解释债务复利的代价",
+      "notes": "正面：分期/消费贷判断"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "都说复利是第八大奇迹，它到底怎么帮我赚钱？",
+      "expected_behavior": "调用 v04，解释复利朋友面与敌人面",
+      "notes": "正面：复利原理"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我该先还房贷还是先拿钱去投资？",
+      "expected_behavior": "调用 v04（配合 v07），判断复利方向在哪边",
+      "notes": "正面：还债vs投资"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该怎么管住自己不乱花钱？",
+      "expected_behavior": "不应调用 v04，应调用 v08 攒钱机制",
+      "notes": "诱饵（跨 skill）：攒钱机制"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我要不要贷款买房？",
+      "expected_behavior": "不应只调用 v04，应调用 v07 良债vs劣债判断债务性质",
+      "notes": "诱饵（跨 skill）：债务性质"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "商家说这个分期是免息的，可以办吗？",
+      "expected_behavior": "触发 v04，说明免息特例（真无息且不影响现金流可谨慎用）",
+      "notes": "边界：无息分期的特例"
+    }
+  ]
+}

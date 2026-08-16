@@ -1,0 +1,49 @@
+{
+  "skill": "v26-家族首富相处之道",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我富了，亲戚开口借钱/让我担保创业，该怎么办？",
+      "expected_behavior": "调用 v26，按资产档位给边界（<10亿不借巨款）",
+      "notes": "正面：亲戚借钱"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "该不该给爸妈买房、每月给多少钱？",
+      "expected_behavior": "调用 v26，按档位给生活费纪律（固定日期/说投资收益）",
+      "notes": "正面：赡养父母"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我是家里第一个有钱的，怎么跟兄弟姐妹处好？",
+      "expected_behavior": "调用 v26，用'避免人心涣散'原则",
+      "notes": "正面：家庭和睦"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该怎么看待用公款？",
+      "expected_behavior": "不应只调用 v26，应调用 v19 对待他人金钱",
+      "notes": "诱饵（跨 skill）：金钱态度"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我该买什么理财？",
+      "expected_behavior": "不应调用 v26，应调用 v11/v13 投资方法",
+      "notes": "诱饵（跨 skill）：投资标的"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我收入不错但还没多少存款，家人就指望我了，怎么拒绝不伤感情？",
+      "expected_behavior": "触发 v26，用'资产未稳固前只做小额关怀'的边界",
+      "notes": "边界：初步富裕时的拒绝"
+    }
+  ]
+}

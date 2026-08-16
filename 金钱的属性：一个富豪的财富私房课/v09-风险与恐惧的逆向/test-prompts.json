@@ -1,0 +1,49 @@
+{
+  "skill": "v09-风险与恐惧的逆向",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "市场跌成这样，大家都在割肉，我该不该也跑？",
+      "expected_behavior": "调用 v09，用'风险最大时风险最小'框架判断",
+      "notes": "正面：暴跌恐慌"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "现在全民都在买基金，是不是说明很安全？",
+      "expected_behavior": "调用 v09，提示大众贪婪时风险最高",
+      "notes": "正面：狂热追涨"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "怎么判断现在市场是恐惧还是贪婪？",
+      "expected_behavior": "调用 v09，给出情绪温度测试",
+      "notes": "正面：市场情绪判断"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "某公司股价暴跌，能抄底吗？",
+      "expected_behavior": "不应只调用 v09，应调用 v14 价值投资（判断价值）",
+      "notes": "诱饵（跨 skill）：抄底需价值判断"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "新闻说经济要崩了，我要不要卖房？",
+      "expected_behavior": "不应只调用 v09，应调用 v18 新闻vs投资信息分析数据",
+      "notes": "诱饵（跨 skill）：新闻信息处理"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我不懂股票，也能用'别人恐惧我贪婪'吗？",
+      "expected_behavior": "触发 v09，说明无价值判断者不宜主动抄底（可先不割肉不追高）",
+      "notes": "边界：新手适用性"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "skill": "v12-分散投资的真伪",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我买了20只不同行业的基金，算分散投资了吧？",
+      "expected_behavior": "调用 v12，用'篮子vs架子'判断是否真分散",
+      "notes": "正面：假分散迷思"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "全部身家都买房是不是最稳的？",
+      "expected_behavior": "调用 v12，指出全押楼市=同一架子风险",
+      "notes": "正面：集中风险"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "分散投资到底怎么才叫分散？",
+      "expected_behavior": "调用 v12，解释跨资产大类的分散",
+      "notes": "正面：分散口径"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该拿多少比例的钱去买股票？",
+      "expected_behavior": "不应只调用 v12，应调用 v11 资产配置优先",
+      "notes": "诱饵（跨 skill）：配置比例"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "现在暴跌，要不要抄底？",
+      "expected_behavior": "不应调用 v12，应调用 v09/v14 逆向与价值判断",
+      "notes": "诱饵（跨 skill）：抄底决策"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我只有几十万，分散到各种资产是不是太碎了？",
+      "expected_behavior": "触发 v12，说明小资金过度分散无意义（先集中）",
+      "notes": "边界：小资金过度分散"
+    }
+  ]
+}

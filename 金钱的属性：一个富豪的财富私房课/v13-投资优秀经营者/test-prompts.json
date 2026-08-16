@@ -1,0 +1,49 @@
+{
+  "skill": "v13-投资优秀经营者",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我完全不懂股票，想长期省心地持有，该怎么开始？",
+      "expected_behavior": "调用 v13，用'买行业第一+每月积股+股东心态'入门",
+      "notes": "正面：新手入门"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "买股票是不是就等于当股东？该怎么用老板心态看公司？",
+      "expected_behavior": "调用 v13，讲股东即老板、选比自己优秀的经营者",
+      "notes": "正面：股东心态"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "为什么专家推荐的股票我一买就跌？该买什么样的公司？",
+      "expected_behavior": "调用 v13，引导选行业第一、不跟风",
+      "notes": "正面：选股困惑"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "股价跌到多少才值得买入？",
+      "expected_behavior": "不应只调用 v13，应调用 v14 价值投资（估值）",
+      "notes": "诱饵（跨 skill）：估值买入"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我该持有多久？",
+      "expected_behavior": "不应只调用 v13，应调用 v15 长期持有",
+      "notes": "诱饵（跨 skill）：持有期限"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "行业第一的股票太贵了买不起，怎么办？",
+      "expected_behavior": "触发 v13，解释可少买/积股/关注第二，而非退而求其次买垃圾",
+      "notes": "边界：第一太贵的处理"
+    }
+  ]
+}

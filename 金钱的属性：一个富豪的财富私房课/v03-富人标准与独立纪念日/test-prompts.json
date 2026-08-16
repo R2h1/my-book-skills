@@ -1,0 +1,49 @@
+{
+  "skill": "v03-富人标准与独立纪念日",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我月入两万，到底算不算有钱人？",
+      "expected_behavior": "调用 v03，用三标准（无贷房/非劳动所得/欲望控制）判断",
+      "notes": "正面：富人标准自测"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "什么时候才能算财务自由？我想定个明确的目标",
+      "expected_behavior": "调用 v03，介绍资本收入>劳动收入的独立纪念日",
+      "notes": "正面：设定独立纪念日"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我收入不低但总觉得不够富，是不是我要求太高了？",
+      "expected_behavior": "调用 v03，解释富人标准是相对的、核心是'不工作也无妨'",
+      "notes": "正面：标准相对性焦虑"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "怎么才能多攒点钱？",
+      "expected_behavior": "不应调用 v03，应调用 v08 攒钱机制",
+      "notes": "诱饵（跨 skill）：攒钱操作"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我该选什么股票定投？",
+      "expected_behavior": "不应调用 v03，应调用 v13 投资优秀经营者",
+      "notes": "诱饵（跨 skill）：选股"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我没有房子，但被动收入已经超过工资了，算富人吗？",
+      "expected_behavior": "触发 v03，讨论三标准中'无贷房'在高房价地区的变通",
+      "notes": "边界：标准顺序的弹性"
+    }
+  ]
+}

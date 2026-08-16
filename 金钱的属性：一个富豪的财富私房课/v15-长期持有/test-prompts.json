@@ -1,0 +1,49 @@
+{
+  "skill": "v15-长期持有",
+  "version": "0.1.0",
+  "source_book": "《金钱的属性：一个富豪的财富私房课》",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我买的股票两年翻倍了，要不要卖？",
+      "expected_behavior": "调用 v15，用'逻辑检验'判断价值是否变化",
+      "notes": "正面：获利想卖"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "怎么才能拿得住股票，不总想折腾？",
+      "expected_behavior": "调用 v15，讲最短持有期与'股票是用来买入的'",
+      "notes": "正面：拿不住"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "长期持有到底要持有多久？",
+      "expected_behavior": "调用 v15，给出5年股/10年房的期限刻度",
+      "notes": "正面：持有期限"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "这只股票值多少钱，跌了该买吗？",
+      "expected_behavior": "不应只调用 v15，应调用 v14 价值判断",
+      "notes": "诱饵（跨 skill）：估值"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我该买哪家公司？",
+      "expected_behavior": "不应调用 v15，应调用 v13 选公司",
+      "notes": "诱饵（跨 skill）：选股"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我买的公司基本面真的变坏了，还要长期持有吗？",
+      "expected_behavior": "触发 v15，说明价值永久受损时应卖出（配合v14）",
+      "notes": "边界：价值受损的例外"
+    }
+  ]
+}
